@@ -1,0 +1,30 @@
+tipoproducto:
+    pattern:  /
+    defaults: { _controller: "PpaPaloBundle:TipoProducto:index" }
+
+tipoproducto_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PpaPaloBundle:TipoProducto:show" }
+
+tipoproducto_new:
+    pattern:  /new
+    defaults: { _controller: "PpaPaloBundle:TipoProducto:new" }
+
+tipoproducto_create:
+    pattern:  /create
+    defaults: { _controller: "PpaPaloBundle:TipoProducto:create" }
+    requirements: { _method: post }
+
+tipoproducto_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "PpaPaloBundle:TipoProducto:edit" }
+
+tipoproducto_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PpaPaloBundle:TipoProducto:update" }
+    requirements: { _method: post|put }
+
+tipoproducto_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PpaPaloBundle:TipoProducto:delete" }
+    requirements: { _method: post|delete }

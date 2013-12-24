@@ -1,0 +1,19 @@
+ppa_palo:
+    resource: "@PpaPaloBundle/Resources/config/routing.yml"
+    prefix:   /
+
+PpaPaloBundle_producto:
+    resource: "@PpaPaloBundle/Resources/config/routing/producto.yml"
+    prefix:   /producto
+
+PpaPaloBundle_tipoproducto:
+    resource: "@PpaPaloBundle/Resources/config/routing/tipoproducto.yml"
+    prefix:   /tipoproducto
+
+PpaPaloBundle_categoria:
+    resource: "@PpaPaloBundle/Resources/config/routing/categoria.yml"
+    prefix:   /categoria
+
+PpaPaloBundle_imagen:
+    resource: "@PpaPaloBundle/Resources/config/routing/imagen.yml"
+    prefix:   /imagen

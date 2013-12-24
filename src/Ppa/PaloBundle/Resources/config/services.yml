@@ -1,0 +1,7 @@
+parameters:
+#    ppa_palo.example.class: Ppa\PaloBundle\Example
+
+services:
+#    ppa_palo.example:
+#        class: %ppa_palo.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

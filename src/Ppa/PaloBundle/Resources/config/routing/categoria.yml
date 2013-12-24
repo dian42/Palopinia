@@ -1,0 +1,30 @@
+categoria:
+    pattern:  /
+    defaults: { _controller: "PpaPaloBundle:Categoria:index" }
+
+categoria_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PpaPaloBundle:Categoria:show" }
+
+categoria_new:
+    pattern:  /new
+    defaults: { _controller: "PpaPaloBundle:Categoria:new" }
+
+categoria_create:
+    pattern:  /create
+    defaults: { _controller: "PpaPaloBundle:Categoria:create" }
+    requirements: { _method: post }
+
+categoria_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "PpaPaloBundle:Categoria:edit" }
+
+categoria_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PpaPaloBundle:Categoria:update" }
+    requirements: { _method: post|put }
+
+categoria_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PpaPaloBundle:Categoria:delete" }
+    requirements: { _method: post|delete }

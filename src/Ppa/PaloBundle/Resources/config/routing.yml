@@ -1,0 +1,3 @@
+ppa_palo_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: PpaPaloBundle:Default:index }

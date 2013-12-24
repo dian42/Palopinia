@@ -1,0 +1,30 @@
+imagen:
+    pattern:  /
+    defaults: { _controller: "PpaPaloBundle:Imagen:index" }
+
+imagen_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PpaPaloBundle:Imagen:show" }
+
+imagen_new:
+    pattern:  /new
+    defaults: { _controller: "PpaPaloBundle:Imagen:new" }
+
+imagen_create:
+    pattern:  /create
+    defaults: { _controller: "PpaPaloBundle:Imagen:create" }
+    requirements: { _method: post }
+
+imagen_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "PpaPaloBundle:Imagen:edit" }
+
+imagen_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PpaPaloBundle:Imagen:update" }
+    requirements: { _method: post|put }
+
+imagen_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PpaPaloBundle:Imagen:delete" }
+    requirements: { _method: post|delete }
