@@ -1,1 +1,7 @@
-Hello {{ name }}!
+{% extends '::base.html.twig' %}
+
+{%block tipo%}
+	{% for item in lista_tipo %}
+	    <li><a class="ajax-link" href="index.html"><i class="icon-home"></i><span class="hidden-tablet"> Palo Piña</span></a></li>
+	{% endfor %}
+{% endblock %}

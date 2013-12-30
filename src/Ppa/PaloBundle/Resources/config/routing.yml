@@ -1,3 +1,10 @@
-ppa_palo_homepage:
-    pattern:  /hello/{name}
+home:
+    path:  /
     defaults: { _controller: PpaPaloBundle:Default:index }
+
+producto:
+    path: /producto
+    defaults: { _controller: PpaPaloBundle:Producto:index }
+producto_create:
+    path: /producto/new
+    defaults: { _controller: PpaPaloBundle:Producto:create }

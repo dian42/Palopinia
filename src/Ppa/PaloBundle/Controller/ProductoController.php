@@ -4,6 +4,9 @@ namespace Ppa\PaloBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 use Ppa\PaloBundle\Entity\Producto;
 use Ppa\PaloBundle\Form\ProductoType;
@@ -15,10 +18,6 @@ use Ppa\PaloBundle\Form\ProductoType;
 class ProductoController extends Controller
 {
 
-    /**
-     * Lists all Producto entities.
-     *
-     */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -29,10 +28,7 @@ class ProductoController extends Controller
             'entities' => $entities,
         ));
     }
-    /**
-     * Creates a new Producto entity.
-     *
-     */
+    
     public function createAction(Request $request)
     {
         $entity = new Producto();
