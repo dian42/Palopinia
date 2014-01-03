@@ -34,4 +34,15 @@ class DefaultController extends Controller
             'entities' => $entities,
         ));
     }
+
+    public function mostrarAction($idTipo)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entitie = $em->getRepository('PpaPaloBundle:Producto')->findByTipoproducto($idTipo);
+
+        return $this->render('PpaPaloBundle:Default:index.html.twig', array(
+            'entitie' => $entitie,
+        ));
+    }
 }

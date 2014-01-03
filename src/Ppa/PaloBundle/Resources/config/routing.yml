@@ -1,3 +1,6 @@
 home:
     path:  /
     defaults: { _controller: PpaPaloBundle:Default:index }
+mostrar:
+    path:  /mostrar/{idTipo}
+    defaults: { _controller: PpaPaloBundle:Default:mostrar }
