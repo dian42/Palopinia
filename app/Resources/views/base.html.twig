@@ -75,10 +75,7 @@
                 <div class="well nav-collapse sidebar-nav">
                     <ul class="nav nav-tabs nav-stacked main-menu">
                         <li class="nav-header hidden-tablet">Categoria</li>
-                            {% block tipo %}
-                                
-                            {% endblock %}
-                        
+                            {{ render(controller('PpaPaloBundle:Default:lista' )) }}
                     </ul>
                 </div><!--/.well -->
             </div><!--/span-->
