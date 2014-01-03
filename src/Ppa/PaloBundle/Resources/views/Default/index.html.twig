@@ -1,1 +1,10 @@
-Hello {{ name }}!
+{% extends '::base.html.twig' %}
+
+{%block body%}
+	<ul>
+    <li>Producto</li>
+	{% for item in entitie %}
+	    <li><a class="ajax-link" href="{{ path('producto_show', { 'id': item.id }) }}"><i></i><span > {{ item.nombre }}</span></a></li>
+	{% endfor %}
+                    </ul>
+{% endblock %}
