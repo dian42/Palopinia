@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {%block tipo%}
-	{% for item in lista_tipo %}
-	    <li><a class="ajax-link" href="index.html"><i class="icon-home"></i><span class="hidden-tablet"> Palo Piña</span></a></li>
+	{% for item in entities %}
+	    <li><a class="ajax-link" href="{{ path('producto_show', { 'id': item.id }) }}"><i class="icon-home"></i><span class="hidden-tablet"> {{ item.nombre }}</span></a></li>
 	{% endfor %}
 {% endblock %}

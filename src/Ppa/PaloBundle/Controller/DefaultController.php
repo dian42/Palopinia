@@ -14,15 +14,14 @@ use Ppa\PaloBundle\Form\ProductoType;
 class DefaultController extends Controller
 {
 	
-    public function indexAction( )
+    public function indexAction()
     {
-    	$em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('PpaPaloBundle:TipoProducto')->findAll();
+        $entities = $em->getRepository('PpaPaloBundle:Producto')->findAll();
 
-        return $this->render('PpaPaloBundle:Producto:index.html.twig', array(
-            'lista_tipo' => $entities,
+        return $this->render('PpaPaloBundle:Default:index.html.twig', array(
+            'entities' => $entities,
         ));
-
     }
 }
