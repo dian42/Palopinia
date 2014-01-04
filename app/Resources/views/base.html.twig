@@ -77,13 +77,15 @@
                     <ul class="nav nav-tabs nav-stacked main-menu">
                         <li class="nav-header hidden-tablet">Categoria</li>
                             {{ render(controller('PpaPaloBundle:Default:lista' )) }}
-                            <li><a class="ajax-link" href="Palopinia/src/Ppa/PaloBundle/Resources/viws/Default/contacto.html.twig"><i class="icon-eye-open"></i><span class="hidden-tablet"> Contacto</span></a></li>
+                            <li><a class="ajax-link" href="{{ path('contacto') }}"><i class="icon-eye-open"></i><span class="hidden-tablet"> Contacto</span></a></li>
                     </ul>
                 </div><!--/.well -->
             </div><!--/span-->
             <!-- left menu ends -->
             
- 
+            
+            
+            
             
             <div id="content" class="span10">
             <!-- content starts -->

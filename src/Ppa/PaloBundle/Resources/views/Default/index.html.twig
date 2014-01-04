@@ -5,8 +5,6 @@
     <li>Producto</li>
 	{% for item in entitie %}
 
-
-
 		<div class="box span3" >
 			<div class="box-header well" data-original-title>
 				<h2><i class="icon-th"></i> {{item.nombre}}</h2>
@@ -17,7 +15,7 @@
 						<img id="image_card" src=" {{asset('bundles/ppapalo/img/mesa.jpg')}}"  width="130" height="100" /> 
 						<span  id="text_card">
 							<p>Precio : {{item.precio}}</p>
-							<p class="clearfix">{{item.Descripcion}}</p>	
+							<p class="clearfix">{{item.descripcionBreve}}</p>	
 						</span>
 					</a>
 				</div>

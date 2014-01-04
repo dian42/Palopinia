@@ -1,3 +1,3 @@
 {% for item in entities %}
-    <li><a class="ajax-link" href="{{ path('producto_show', { 'id': item.id }) }}"><i class="icon-home"></i><span class="hidden-tablet"> {{ item.nombre }}</span></a></li>
+    <li><a class="ajax-link" href="{{ path('mostrar', { 'idTipo': item.id }) }}"><i class="icon-home"></i><span class="hidden-tablet"> {{ item.nombre }}</span></a></li>
 {% endfor %}

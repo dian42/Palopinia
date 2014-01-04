@@ -39,9 +39,16 @@ class Producto
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcion", type="string", length=255)
+     * @ORM\Column(name="descripcion", type="string", length=3000)
      */
     private $descripcion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcionBreve", type="string", length=300)
+     */
+    private $descripcionBreve;
 
     /**
      * @var boolean
@@ -132,6 +139,30 @@ class Producto
     {
         return $this->descripcion;
     }
+
+    /**
+     * Set descripcionBreve
+     *
+     * @param string $descripcion
+     * @return Producto
+     */
+    public function setDescripcionBreve($descripcionBreve)
+    {
+        $this->descripcionBreve = $descripcionBreve;
+    
+        return $this;
+    }
+
+    /**
+     * Get descripcionBreve
+     *
+     * @return string 
+     */
+    public function getDescripcionBreve()
+    {
+        return $this->descripcionBreve;
+    }
+
 
     /**
      * Set mostrar
