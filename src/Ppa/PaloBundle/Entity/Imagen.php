@@ -217,7 +217,7 @@ class Imagen
         // which the UploadedFile move() method does
         $this->getFile()->move(
             $this->getUploadRootDir(),
-            $this->getId().'.'.$this->getFile()->guessExtension()
+            $this->getId()
         );
 
         $this->setFile(null);
@@ -228,7 +228,7 @@ class Imagen
      */
     public function storeFilenameForRemove()
     {
-        $this->temp = $this->getAbsolutePath();
+        $this->temp = '/var/www/Palopinia/web/img/'.$this->getId();
     }
 
      /**

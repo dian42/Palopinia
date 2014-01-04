@@ -109,7 +109,7 @@ class ImagenController extends Controller
 
         return $this->render('PpaPaloBundle:Imagen:show.html.twig', array(
             'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),        ));
+            'delete_form' => $deleteForm->createView()  ));
     }
 
     /**
