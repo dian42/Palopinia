@@ -217,7 +217,7 @@ class Imagen
         // which the UploadedFile move() method does
         $this->getFile()->move(
             $this->getUploadRootDir(),
-            $this->getFile()->getClientOriginalName().'.'.$this->getFile()->guessExtension()
+            $this->getId().'.'.$this->getFile()->guessExtension()
         );
 
         $this->setFile(null);
