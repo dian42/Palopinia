@@ -11,8 +11,8 @@
 			</div>
 			<div class="box-content">
 				<div class="box-content">
-					<a> 
-						<img id="image_card" src=" {{asset('bundles/ppapalo/img/mesa.jpg')}}"  width="130" height="100" /> 
+					<a href="{{ path('pagproducto', {'idProd': item.id})}}"> 
+						{{ render(controller('PpaPaloBundle:Default:picture', {'idProd': item.id } )) }}
 						<span  id="text_card">
 							<p>Precio : {{item.precio}}</p>
 							<p class="clearfix">{{item.descripcionBreve}}</p>	

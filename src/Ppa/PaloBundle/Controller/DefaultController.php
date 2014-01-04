@@ -51,4 +51,36 @@ class DefaultController extends Controller
             return $this->render('PpaPaloBundle:Default:contacto.html.twig');
     }
 
+    public function pictureAction($idProd)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entitie = $em->getRepository('PpaPaloBundle:Imagen')->findOneByProducto($idProd);
+
+        return $this->render('PpaPaloBundle:Default:picture.html.twig', array(
+            'entitie' => $entitie,
+        ));
+    }
+
+    public function pagproductoAction($idProd)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('PpaPaloBundle:Producto')->findById($idProd);
+
+        return $this->render('PpaPaloBundle:Default:pagproducto.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
+
+    public function articuloAction($idProd)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entitie = $em->getRepository('PpaPaloBundle:Imagen')->findByProducto($idProd);
+
+        return $this->render('PpaPaloBundle:Default:articulo.html.twig', array(
+            'entitie' => $entitie,
+        ));
+    }
 }
