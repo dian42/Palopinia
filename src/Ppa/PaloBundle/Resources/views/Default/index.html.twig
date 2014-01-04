@@ -4,7 +4,28 @@
 	<ul>
     <li>Producto</li>
 	{% for item in entitie %}
-	    <li><a class="ajax-link" href="{{ path('producto_show', { 'id': item.id }) }}"><i></i><span > {{ item.nombre }}</span></a></li>
+
+
+
+		<div class="box span3" >
+			<div class="box-header well" data-original-title>
+				<h2><i class="icon-th"></i> {{item.nombre}}</h2>
+			</div>
+			<div class="box-content">
+				<div class="box-content">
+					<a> 
+						<img id="image_card" src=" {{asset('bundles/ppapalo/img/mesa.jpg')}}"  width="130" height="100" /> 
+						<span  id="text_card">
+							<p>Precio : {{item.precio}}</p>
+							<p class="clearfix">{{item.Descripcion}}</p>	
+						</span>
+					</a>
+				</div>
+			</div>
+		</div>			
+
+
+
 	{% endfor %}
                     </ul>
 {% endblock %}
