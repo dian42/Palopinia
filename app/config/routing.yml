@@ -17,3 +17,10 @@ PpaPaloBundle_categoria:
 PpaPaloBundle_tipoproducto:
     resource: "@PpaPaloBundle/Resources/config/routing/tipoproducto.yml"
     prefix:   /tipoproducto
+login:
+    pattern: /login
+    defaults: { _controller: AcmeMainBundle/Security:login }
+login_check:
+    pattern: /login_check
+logout:
+    pattern: /logout

@@ -7,3 +7,6 @@ mostrar:
 contacto:
     path:  /contacto
     defaults: { _controller: PpaPaloBundle:Default:contacto }
+pagproducto:
+    path:  /pagproducto
+    defaults: { _controller: PpaPaloBundle:Default:pagproducto }

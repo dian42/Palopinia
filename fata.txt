@@ -1,13 +1,13 @@
 falta 
     login 
-    pagina de cada producto 
-    estilizar la muestra en index
-    pag inicial grande o total esa con 2 imagenes
-    renderizar todo
-    restrici'on q tipo de imagen sube
-    hacer enlaces directons hacia los ingresos 
-    hacer not null las variables foraneas 
-    eliminar mostrar bool o modificarlo 
+    pagina de cada producto // hecha falta rederizar 
+    estilizar la muestra en index  // ??
+    pag inicial grande o total esa con 2 imagenes  // falta importante
+    renderizar todo //
+    restrici'on q tipo de imagen sube // complicado y opcional
+    hacer enlaces directons hacia los ingresos // complicado pero hay q hacerlo
+    hacer not null las variables foraneas // 
+    eliminar mostrar bool o modificarlo //
     
 
 
