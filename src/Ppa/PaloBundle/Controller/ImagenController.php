@@ -4,6 +4,9 @@ namespace Ppa\PaloBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 use Ppa\PaloBundle\Entity\Imagen;
 use Ppa\PaloBundle\Form\ImagenType;
@@ -79,7 +82,8 @@ class ImagenController extends Controller
     public function newAction()
     {
         $entity = new Imagen();
-        $form   = $this->createCreateForm($entity);
+        //$form   = $this->createCreateForm($entity);
+        $form   = $this->createForm(new ImagenType(), $entity);
 
         return $this->render('PpaPaloBundle:Imagen:new.html.twig', array(
             'entity' => $entity,
@@ -122,7 +126,9 @@ class ImagenController extends Controller
             throw $this->createNotFoundException('Unable to find Imagen entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
+        //$editForm = $this->createEditForm($entity);
+
+        $editForm = $this->createForm(new ImagenType(), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('PpaPaloBundle:Imagen:edit.html.twig', array(
@@ -165,8 +171,9 @@ class ImagenController extends Controller
         }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
+        //$editForm = $this->createEditForm($entity);
+        $editForm = $this->createForm(new ImagenType(), $entity);
+        $editForm->bind($request);
 
         if ($editForm->isValid()) {
             $em->flush();
@@ -187,7 +194,7 @@ class ImagenController extends Controller
     public function deleteAction(Request $request, $id)
     {
         $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
+        $form->bind($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -213,11 +220,49 @@ class ImagenController extends Controller
      */
     private function createDeleteForm($id)
     {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('imagen_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+        return $this->createFormBuilder(array('id' => $id))
+            ->add('id', 'hidden')
             ->getForm()
         ;
     }
+
+    public function uploadAction()
+    {
+        // ...
+
+
+         $document = new Imagen();
+            $form = $this->createFormBuilder($document)
+                ->add('name')
+                ->add('file')
+                ->getForm()
+            ;
+
+            if ($this->getRequest()->isMethod('POST')) {
+                $form->bind($this->getRequest());
+                if ($form->isValid()) {
+                    $em = $this->getDoctrine()->getManager();
+
+                    $em->persist($document);
+                    $em->flush();
+
+                    return $this->redirect($this->generateUrl('/var/www/Palopinia/web/'));
+                }
+
+             return array('form' => $form->createView());
+                // ...
+            }
+
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+
+                $document->upload();
+
+                $em->persist($document);
+                $em->flush();
+
+                return $this->redirect('/var/www/Palopinia/web/');
+            }
+    }
+
 }
