@@ -189,7 +189,7 @@ class Imagen
     {
         if (null !== $this->getFile()) {
             // do whatever you want to generate a unique name
-            $filename = $this->getFile()->getClientOriginalName();
+            $filename = $this->getFile()->guessExtension();
             $this->path = $filename;
         }
     }
@@ -217,7 +217,7 @@ class Imagen
         // which the UploadedFile move() method does
         $this->getFile()->move(
             $this->getUploadRootDir(),
-            $this->getId()
+            $this->getId().'.'.$this->getPath()
         );
 
         $this->setFile(null);
@@ -228,7 +228,7 @@ class Imagen
      */
     public function storeFilenameForRemove()
     {
-        $this->temp = '/var/www/Palopinia/web/img/'.$this->getId();
+        $this->temp = '/var/www/Palopinia/web/img/'.$this->getId().'.'.$this->getPath();
     }
 
      /**

@@ -42,7 +42,9 @@ class ImagenController extends Controller
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
+
         if ($form->isValid()) {
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
@@ -264,5 +266,4 @@ class ImagenController extends Controller
                 return $this->redirect('/var/www/Palopinia/web/');
             }
     }
-
 }
