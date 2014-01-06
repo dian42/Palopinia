@@ -98,7 +98,7 @@ class Imagen
 
     /**
      * @ORM\ManyToOne(targetEntity="Producto", inversedBy="imagens")
-     * @ORM\JoinColumn(name="producto_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="producto_id", referencedColumnName="id", nullable=false)
      */
     protected $producto;
 
@@ -131,7 +131,7 @@ class Imagen
      *
      * @ORM\Column(name="doc_path", type="string", length=255)
      */
-    public $path;
+    private $path;
 
     private $temp;    
 
@@ -177,7 +177,12 @@ class Imagen
             $this->temp = $this->path;
             $this->path = null;
         } else {
-            $this->path = 'initial';
+//            $this->path = 'initial';
+            if (null !== $this->getFile()) {
+                // do whatever you want to generate a unique name
+                $filename = $this->getFile()->guessExtension();
+                $this->path = $filename;
+            }
         }
     }
 

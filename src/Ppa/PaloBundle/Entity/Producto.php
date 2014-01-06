@@ -199,7 +199,7 @@ class Producto
 
     /**
      * @ORM\ManyToOne(targetEntity="TipoProducto", inversedBy="productos")
-     * @ORM\JoinColumn(name="tipoproducto_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="tipoproducto_id", referencedColumnName="id", nullable=false)
      */
     protected $tipoproducto;
 
