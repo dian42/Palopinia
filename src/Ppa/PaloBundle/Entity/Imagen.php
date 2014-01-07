@@ -131,7 +131,7 @@ class Imagen
      *
      * @ORM\Column(name="doc_path", type="string", length=255)
      */
-    public $path;
+    private $path;
 
     private $temp;    
 

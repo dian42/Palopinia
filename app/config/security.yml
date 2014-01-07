@@ -25,3 +25,9 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: /new$, role: ROLE_ADMIN }
+        - { path: /edit$, role: ROLE_ADMIN }
+        - { path: ^/producto, role: ROLE_ADMIN }
+        - { path: ^/tipoproducto, role: ROLE_ADMIN }
+        - { path: ^/imagen, role: ROLE_ADMIN }
+        - { path: ^/categoria, role: ROLE_ADMIN }
