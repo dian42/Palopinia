@@ -11,6 +11,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Ppa\PaloBundle\Entity\Imagen;
 use Ppa\PaloBundle\Form\ImagenType;
 
+
+use Symfony\Component\HttpFoundation\Response;
+
+
 /**
  * Imagen controller.
  *
@@ -42,18 +46,24 @@ class ImagenController extends Controller
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
+
+        if ($form->isValid() && 'jpeg' === $entity->getPath()) {
+
             $em = $this->getDoctrine()->getManager();
+
             $em->persist($entity);
             $em->flush();
 
             return $this->redirect($this->generateUrl('imagen_show', array('id' => $entity->getId())));
         }
 
+        return $this->redirect($this->generateUrl('imagen_new'));
+
+/*
         return $this->render('PpaPaloBundle:Imagen:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        ));
+        ));*/
     }
 
     /**
@@ -225,44 +235,4 @@ class ImagenController extends Controller
             ->getForm()
         ;
     }
-
-    public function uploadAction()
-    {
-        // ...
-
-
-         $document = new Imagen();
-            $form = $this->createFormBuilder($document)
-                ->add('name')
-                ->add('file')
-                ->getForm()
-            ;
-
-            if ($this->getRequest()->isMethod('POST')) {
-                $form->bind($this->getRequest());
-                if ($form->isValid()) {
-                    $em = $this->getDoctrine()->getManager();
-
-                    $em->persist($document);
-                    $em->flush();
-
-                    return $this->redirect($this->generateUrl('/var/www/Palopinia/web/'));
-                }
-
-             return array('form' => $form->createView());
-                // ...
-            }
-
-            if ($form->isValid()) {
-                $em = $this->getDoctrine()->getManager();
-
-                $document->upload();
-
-                $em->persist($document);
-                $em->flush();
-
-                return $this->redirect('/var/www/Palopinia/web/');
-            }
-    }
-
 }
