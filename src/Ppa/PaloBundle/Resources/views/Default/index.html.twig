@@ -14,10 +14,10 @@
 					<?--<a href="{{ path('pagproducto', {'idProd': item.id})}}">
 						{{ render(controller('PpaPaloBundle:Default:picture', {'idProd': item.id } )) }}
 					</a>
-					<div style="overflow: hidden; width: 200px; height: 100px;>
+					<div  style="overflow: hidden; width: 200px; height: 100px;>
 						<p align="left">
-							<FONT FACE="times new roman" SIZE=3.5><u><b><i><BR>Descripción Breve</FONT></u></b></i>
-							<p align="left" >{{item.descripcionBreve}}</p>
+							<FONT FACE="times new roman" SIZE=3.5 color=0BA457>${{item.precio}}</FONT>
+							<p align="left" ><BR>{{item.descripcionBreve}}</p>
   					</div>
   						<br><a href="{{ path('pagproducto', {'idProd': item.id})}}" class="btn btn-primary btn-lg active btn btn-info" role="button" shadow: 0 1px 3px rgba(0,0,0,.25)>Características</a>
   					</p>
