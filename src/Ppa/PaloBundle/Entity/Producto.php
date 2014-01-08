@@ -50,13 +50,6 @@ class Producto
      */
     private $descripcionBreve;
 
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="mostrar", type="boolean")
-     */
-    private $mostrar;
-
     public function __toString() {
         return $this->nombre;
     }
@@ -163,29 +156,6 @@ class Producto
         return $this->descripcionBreve;
     }
 
-
-    /**
-     * Set mostrar
-     *
-     * @param boolean $mostrar
-     * @return Producto
-     */
-    public function setMostrar($mostrar)
-    {
-        $this->mostrar = $mostrar;
-    
-        return $this;
-    }
-
-    /**
-     * Get mostrar
-     *
-     * @return boolean 
-     */
-    public function getMostrar()
-    {
-        return $this->mostrar;
-    }
 
     /**
      * @ORM\OneToMany(targetEntity="Imagen", mappedBy="producto")

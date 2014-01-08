@@ -1,30 +1,10 @@
 {% extends '::base.html.twig' %}
 
+
+
 {%block body%}
-	<ul>
-    <li>Producto</li>
 	{% for item in entities %}
-
-		<div class="box span10" >
-			<div class="box-header well" data-original-title>
-				<h2><i class="icon-th"></i> {{item.nombre}}</h2>
-			</div>
-			<div class="box-content">
-				<div class="box-content">
-					<a style="text-decoration:none"> 
 						{{ render(controller('PpaPaloBundle:Default:articulo', {'idProd': item.id } )) }}
-					</a>
-					<span  id="text_card">
-						<p align="left"><FONT FACE="times new roman" SIZE=4>${{item.precio}}</FONT></p>
-						<p><i><u><b> Descripción</p></i></u></b>
-						<p>{{item.descripcion}}</p>	
-					</span>
-				</div>
-			</div>
-		</div>			
-
-
 
 	{% endfor %}
-                    </ul>
 {% endblock %}

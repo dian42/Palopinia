@@ -19,7 +19,6 @@ class ProductoType extends AbstractType
             ->add('precio')
             ->add('descripcion')
             ->add('descripcionBreve')
-            ->add('mostrar')
             ->add('tipoproducto')
         ;
     }
