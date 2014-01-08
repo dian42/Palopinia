@@ -11,14 +11,22 @@
 			</div>
 			<div class="box-content">
 				<div class="box-content">
-					<a> 
+					<a style="text-decoration:none"> 
 						{{ render(controller('PpaPaloBundle:Default:articulo', {'idProd': item.id } )) }}
+<<<<<<< HEAD
 
 						<span  id="text_card">
 							<p>Precio : {{item.precio}}</p>
 							<p class="clearfix">{{item.descripcion}}</p>	
 						</span>
+=======
+>>>>>>> vista
 					</a>
+					<span  id="text_card">
+						<p align="left"><FONT FACE="times new roman" SIZE=4>${{item.precio}}</FONT></p>
+						<p><i><u><b> Descripción</p></i></u></b>
+						<p>{{item.descripcion}}</p>	
+					</span>
 				</div>
 			</div>
 		</div>			

@@ -98,7 +98,7 @@ class Imagen
 
     /**
      * @ORM\ManyToOne(targetEntity="Producto", inversedBy="imagens")
-     * @ORM\JoinColumn(name="producto_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="producto_id", referencedColumnName="id", nullable=false)
      */
     protected $producto;
 
@@ -177,7 +177,12 @@ class Imagen
             $this->temp = $this->path;
             $this->path = null;
         } else {
-            $this->path = 'initial';
+//            $this->path = 'initial';
+            if (null !== $this->getFile()) {
+                // do whatever you want to generate a unique name
+                $filename = $this->getFile()->guessExtension();
+                $this->path = $filename;
+            }
         }
     }
 
@@ -189,7 +194,7 @@ class Imagen
     {
         if (null !== $this->getFile()) {
             // do whatever you want to generate a unique name
-            $filename = $this->getFile()->getClientOriginalName();
+            $filename = $this->getFile()->guessExtension();
             $this->path = $filename;
         }
     }
@@ -217,7 +222,7 @@ class Imagen
         // which the UploadedFile move() method does
         $this->getFile()->move(
             $this->getUploadRootDir(),
-            $this->getId()
+            $this->getId().'.'.$this->getPath()
         );
 
         $this->setFile(null);
@@ -228,7 +233,7 @@ class Imagen
      */
     public function storeFilenameForRemove()
     {
-        $this->temp = '/var/www/Palopinia/web/img/'.$this->getId();
+        $this->temp = '/var/www/Palopinia/web/img/'.$this->getId().'.'.$this->getPath();
     }
 
      /**
