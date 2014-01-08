@@ -11,12 +11,15 @@
 			{{ render(controller('PpaPaloBundle:Default:articulo', {'idProd': item.id } )) }}
 		</div>
 			<div class="box span4">
+			<div class="box-header well" data-original-title>
+				<h2><i class="icon-th"></i> Descripción</h2>
+			</div>
+						<div class="box-content">
 
-
-							<h4 style="color:#62A7DB" align="center"><i><b><u>Descripción</i></b></u></h4>
-							<br> <br> <p>{{item.descripcion}}</p>
+							<br> <p>{{item.descripcion}}</p>
 							<h2 style="color:red"><spam style="color:green; font-size: 14px;"><FONT SIZE=3></FONT>$  </spam>{{item.precio}}</h2>
 						</div>
+			</div>
 
 	{% endfor %}
 {% endblock %}

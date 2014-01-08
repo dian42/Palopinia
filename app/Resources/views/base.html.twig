@@ -3,10 +3,8 @@
 <head>
 
     <meta charset="utf-8">
-    <title> Importadora Palo Piñia</title>
+    <title> Importadora Palo Piña</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
-    <meta name="author" content="Muhammad Usman">
 
     <!-- The styles -->
     {% stylesheets filter='cssrewrite' '@PpaPaloBundle/Resources/public/css/bootstrap-spacelab.css' %}
@@ -73,13 +71,36 @@
                 </a>
                 <a class="brand" href="{{path('home')}}"> 
                 <img id="logo" alt="Palo Piña Logo" style="float left;" src=" {{asset('bundles/ppapalo/img/logooficial.jpg')}}" /> 
-                <!--<spam id="textoLogo" style="float:middle">Sin Usted Quebramos</spam></a>-->
+                <span id="textoLogo">Sin Usted Quebramos</span></a>
                 <div align="right" >
                 <a class="btn btn-success" href="#">
                     <i class="icon-user icon-white"></i>
                         Admin
                     </a>
                 </div>
+              
+              {% if is_granted('ROLE_ADMIN') %}
+                 <a href="botoncrate"></a>
+                 <div align="right" >
+                 <a class="btn btn-success" href="{{path('user_logout')}}">
+                    <i class="icon-off icon-white"></i>
+                        Logout
+                    </a>
+                 <a class="btn btn-success" href="{{path('producto_new')}}">
+                    <i class="icon-user icon-plus icon-white"></i>
+                        Crear Producto
+                    </a>
+                 <a class="btn btn-success" href="{{path('tipoproducto_new')}}">
+                    <i class="icon-tags icon-white"></i>
+                        Crear Tipo Producto
+                    </a>
+                </div>
+                {% endif %}               
+
+     
+
+
+
                 <!-- theme selector starts -->
 
                 <!-- theme selector ends -->
@@ -119,8 +140,8 @@
             <!-- left menu ends -->
             
             
-            
-            
+
+
             
             <div id="content" class="span10">
             <!-- content starts -->
