@@ -42,7 +42,30 @@
                 <a class="brand" href="{{path('home')}}"> 
                 <img id="logo" alt="Palo Piña Logo" src=" {{asset('bundles/ppapalo/img/logooficial.jpg')}}" /> 
                 <span id="textoLogo">Sin Usted Quebramos</span></a>
-                
+             
+              
+              {% if is_granted('ROLE_ADMIN') %}
+                 <a href="botoncrate"></a>
+                 <div align="right" >
+                 <a class="btn btn-success" href="{{path('user_logout')}}">
+                    <i class="icon-off icon-white"></i>
+                        Logout
+                    </a>
+                 <a class="btn btn-success" href="{{path('producto_new')}}">
+                    <i class="icon-user icon-plus icon-white"></i>
+                        Crear Producto
+                    </a>
+                 <a class="btn btn-success" href="{{path('tipoproducto_new')}}">
+                    <i class="icon-tags icon-white"></i>
+                        Crear Tipo Producto
+                    </a>
+                </div>
+                {% endif %}               
+
+     
+
+
+
                 <!-- theme selector starts -->
 
                 <!-- theme selector ends -->
