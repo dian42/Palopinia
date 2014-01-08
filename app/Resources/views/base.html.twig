@@ -3,10 +3,8 @@
 <head>
 
     <meta charset="utf-8">
-    <title> Importadora Palo Piñia</title>
+    <title> Importadora Palo Piña</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
-    <meta name="author" content="Muhammad Usman">
 
     <!-- The styles -->
     {% stylesheets 'bundles/ppapalo/css/*' filter='cssrewrite' %}
@@ -44,13 +42,25 @@
                 <a class="brand" href="{{path('home')}}"> 
                 <img id="logo" alt="Palo Piña Logo" src=" {{asset('bundles/ppapalo/img/logooficial.jpg')}}" /> 
                 <span id="textoLogo">Sin Usted Quebramos</span></a>
-                <div align="right" >
-                <a class="btn btn-success" href="#">
-                    <i class="icon-user icon-white"></i>
-                        Admin
+              
+              {% if is_granted('ROLE_ADMIN') %}
+                 <div align="right" >
+                 <a class="btn btn-success" href="{{path('user_logout')}}">
+                    <i class="icon-off icon-white"></i>
+                        Logout
+                    </a>
+                 <a class="btn btn-success" href="{{path('producto_new')}}">
+                    <i class="icon-user icon-plus icon-white"></i>
+                        Crear Producto
+                    </a>
+                 <a class="btn btn-success" href="{{path('tipoproducto_new')}}">
+                    <i class="icon-tags icon-white"></i>
+                        Crear Tipo Producto
                     </a>
                 </div>
-                <!-- theme selector starts -->
+                {% endif %}               
+
+              <!-- theme selector starts -->
 
                 <!-- theme selector ends -->
                 
