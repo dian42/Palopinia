@@ -4,7 +4,19 @@
 
 {%block body%}
 	{% for item in entities %}
-						{{ render(controller('PpaPaloBundle:Default:articulo', {'idProd': item.id } )) }}
+		<div class="box span7">
+			<div class="box-header well" data-original-title>
+				<h2><i class="icon-th"></i> {{item.nombre}}</h2>
+			</div>
+			{{ render(controller('PpaPaloBundle:Default:articulo', {'idProd': item.id } )) }}
+		</div>
+			<div class="box span4">
+
+
+							<h4 style="color:#62A7DB" align="center"><i><b><u>Descripción</i></b></u></h4>
+							<br> <br> <p>{{item.descripcion}}</p>
+							<h2 style="color:red"><spam style="color:green; font-size: 14px;"><FONT SIZE=3></FONT>$  </spam>{{item.precio}}</h2>
+						</div>
 
 	{% endfor %}
 {% endblock %}
