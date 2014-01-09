@@ -56,8 +56,7 @@
     <![endif]-->
 
     <!-- The fav icon -->
-    <link rel="shortcut icon" href="img/favicon.ico">
-        
+    <link style="float:left" rel="shortcut icon" href="img/favicon.ico" width="200" heigh="200">
 </head>
 
 <body>
@@ -70,15 +69,9 @@
                     <span class="icon-bar"></span>
                 </a>
                 <a class="brand" href="{{path('home')}}"> 
-                <img id="logo" alt="Palo Piña Logo" style="float left;" src=" {{asset('bundles/ppapalo/img/logooficial.jpg')}}" /> 
-                <span id="textoLogo">Sin Usted Quebramos</span></a>
-                <div align="right" >
-                <a class="btn btn-success" href="#">
-                    <i class="icon-user icon-white"></i>
-                        Admin
-                    </a>
-                </div>
-              
+                <img id="logo" style="float left;" src=" {{asset('bundles/ppapalo/img/logooficial.jpg')}}" hspace=3 align="middle"> <span style="clear:both">Sin ustedes quebramos</span>
+
+                <!--<span id="textoLogo">Sin Usted Quebramos</span>--></a>             
               {% if is_granted('ROLE_ADMIN') %}
                  <a href="botoncrate"></a>
                  <div align="right" >
