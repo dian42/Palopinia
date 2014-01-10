@@ -214,11 +214,50 @@ class Contacto
     }
 
     /**
-     * @ORM\ManyToMany(targetEntity="Categoria", mappedBy="contactos")
+     * @ORM\ManyToMany(targetEntity="Categoria")
+     * @ORM\JoinTable(name="contactos_categoria",
+     *      joinColumns={@ORM\JoinColumn(name="contacto_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="categoria_id", referencedColumnName="id")}
+     *      )
      **/
     private $categorias;
 
+    // ...
+
     public function __construct() {
         $this->categorias = new ArrayCollection();
+    }
+
+    /**
+     * Add categorias
+     *
+     * @param \Ppa\PaloBundle\Entity\Categoria $categorias
+     * @return Contacto
+     */
+    public function addCategoria(\Ppa\PaloBundle\Entity\Categoria $categorias)
+    {
+        $this->categorias[] = $categorias;
+    
+        return $this;
+    }
+
+    /**
+     * Remove categorias
+     *
+     * @param \Ppa\PaloBundle\Entity\Categoria $categorias
+     */
+    public function removeCategoria(\Ppa\PaloBundle\Entity\Categoria $categorias)
+    {
+        $this->categorias->removeElement($categorias);
+    }
+
+    /**
+     * Get categorias
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCategorias()
+    {
+        return $this->categorias;
     }
 }

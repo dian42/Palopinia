@@ -104,7 +104,6 @@ class Categoria
     public function __construct()
     {
         $this->tipoproductos = new ArrayCollection();
-        $this->contactos = new ArrayCollection();
     }
 
     /**
@@ -139,10 +138,4 @@ class Categoria
     {
         return $this->tipoproductos;
     }
-
-    /**
-     * @ORM\ManyToMany(targetEntity="Contacto", inversedBy="categorias")
-     * @ORM\JoinTable(name="categorias_contactos")
-     **/
-    private $contactos;
 }

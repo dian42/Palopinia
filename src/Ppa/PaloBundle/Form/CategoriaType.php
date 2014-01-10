@@ -17,7 +17,6 @@ class CategoriaType extends AbstractType
         $builder
             ->add('nombre')
             ->add('descripcion','textarea')
-            ->add('contactos')
         ;
     }
     

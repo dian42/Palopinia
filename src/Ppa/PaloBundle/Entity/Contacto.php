@@ -214,9 +214,15 @@ class Contacto
     }
 
     /**
-     * @ORM\ManyToMany(targetEntity="Categoria", mappedBy="contactos")
+     * @ORM\ManyToMany(targetEntity="Categoria")
+     * @ORM\JoinTable(name="contactos_categoria",
+     *      joinColumns={@ORM\JoinColumn(name="contacto_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="categoria_id", referencedColumnName="id")}
+     *      )
      **/
     private $categorias;
+
+    // ...
 
     public function __construct() {
         $this->categorias = new ArrayCollection();
@@ -253,9 +259,5 @@ class Contacto
     public function getCategorias()
     {
         return $this->categorias;
-    }
-
-    public function __toString() {
-        return $this->nombre;
     }
 }
