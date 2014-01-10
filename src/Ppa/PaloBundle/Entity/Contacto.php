@@ -3,6 +3,7 @@
 namespace Ppa\PaloBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Contacto
@@ -210,5 +211,47 @@ class Contacto
     public function getTelefono2()
     {
         return $this->telefono2;
+    }
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Categoria", mappedBy="contactos")
+     **/
+    private $categorias;
+
+    public function __construct() {
+        $this->categorias = new ArrayCollection();
+    }
+
+    /**
+     * Add categorias
+     *
+     * @param \Ppa\PaloBundle\Entity\Categoria $categorias
+     * @return Contacto
+     */
+    public function addCategoria(\Ppa\PaloBundle\Entity\Categoria $categorias)
+    {
+        $this->categorias[] = $categorias;
+    
+        return $this;
+    }
+
+    /**
+     * Remove categorias
+     *
+     * @param \Ppa\PaloBundle\Entity\Categoria $categorias
+     */
+    public function removeCategoria(\Ppa\PaloBundle\Entity\Categoria $categorias)
+    {
+        $this->categorias->removeElement($categorias);
+    }
+
+    /**
+     * Get categorias
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCategorias()
+    {
+        return $this->categorias;
     }
 }

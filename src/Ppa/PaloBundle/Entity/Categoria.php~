@@ -36,6 +36,9 @@ class Categoria
      */
     private $descripcion;
 
+    public function __toString() {
+        return $this->nombre;
+    }
 
     /**
      * Get id
@@ -101,5 +104,45 @@ class Categoria
     public function __construct()
     {
         $this->tipoproductos = new ArrayCollection();
+        $this->contactos = new ArrayCollection();
     }
+
+    /**
+     * Add tipoproductos
+     *
+     * @param \Ppa\PaloBundle\Entity\TipoProducto $tipoproductos
+     * @return Categoria
+     */
+    public function addTipoproducto(\Ppa\PaloBundle\Entity\TipoProducto $tipoproductos)
+    {
+        $this->tipoproductos[] = $tipoproductos;
+    
+        return $this;
+    }
+
+    /**
+     * Remove tipoproductos
+     *
+     * @param \Ppa\PaloBundle\Entity\TipoProducto $tipoproductos
+     */
+    public function removeTipoproducto(\Ppa\PaloBundle\Entity\TipoProducto $tipoproductos)
+    {
+        $this->tipoproductos->removeElement($tipoproductos);
+    }
+
+    /**
+     * Get tipoproductos
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTipoproductos()
+    {
+        return $this->tipoproductos;
+    }
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Contacto", inversedBy="categorias")
+     * @ORM\JoinTable(name="categorias_contactos")
+     **/
+    private $contactos;
 }
