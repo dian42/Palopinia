@@ -1,0 +1,214 @@
+<?php
+
+namespace Ppa\PaloBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Contacto
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Contacto
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=45)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellido", type="string", length=55)
+     */
+    private $apellido;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefono", type="string", length=12)
+     */
+    private $telefono;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cargo", type="string", length=30)
+     */
+    private $cargo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefono2", type="string", length=12)
+     */
+    private $telefono2;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     * @return Contacto
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+    
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set apellido
+     *
+     * @param string $apellido
+     * @return Contacto
+     */
+    public function setApellido($apellido)
+    {
+        $this->apellido = $apellido;
+    
+        return $this;
+    }
+
+    /**
+     * Get apellido
+     *
+     * @return string 
+     */
+    public function getApellido()
+    {
+        return $this->apellido;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return Contacto
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set telefono
+     *
+     * @param string $telefono
+     * @return Contacto
+     */
+    public function setTelefono($telefono)
+    {
+        $this->telefono = $telefono;
+    
+        return $this;
+    }
+
+    /**
+     * Get telefono
+     *
+     * @return string 
+     */
+    public function getTelefono()
+    {
+        return $this->telefono;
+    }
+
+    /**
+     * Set cargo
+     *
+     * @param string $cargo
+     * @return Contacto
+     */
+    public function setCargo($cargo)
+    {
+        $this->cargo = $cargo;
+    
+        return $this;
+    }
+
+    /**
+     * Get cargo
+     *
+     * @return string 
+     */
+    public function getCargo()
+    {
+        return $this->cargo;
+    }
+
+    /**
+     * Set telefono2
+     *
+     * @param string $telefono2
+     * @return Contacto
+     */
+    public function setTelefono2($telefono2)
+    {
+        $this->telefono2 = $telefono2;
+    
+        return $this;
+    }
+
+    /**
+     * Get telefono2
+     *
+     * @return string 
+     */
+    public function getTelefono2()
+    {
+        return $this->telefono2;
+    }
+}
