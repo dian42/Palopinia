@@ -36,10 +36,6 @@ class Categoria
      */
     private $descripcion;
 
-    public function __toString() {
-        return $this->nombre;
-    }
-
     /**
      * Get id
      *
@@ -177,5 +173,9 @@ class Categoria
     public function getContactos()
     {
         return $this->contactos;
+    }
+    
+    public function __toString() {
+        return $this->nombre;
     }
 }

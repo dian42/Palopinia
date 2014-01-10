@@ -254,4 +254,8 @@ class Contacto
     {
         return $this->categorias;
     }
+
+    public function __toString() {
+        return $this->nombre;
+    }
 }
