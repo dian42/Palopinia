@@ -13,7 +13,7 @@ use Ppa\PaloBundle\Form\ProductoType;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    public function indexAction($medicina)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -21,6 +21,7 @@ class DefaultController extends Controller
 
         return $this->render('PpaPaloBundle:Default:index.html.twig', array(
             'entitie' => $entitie,
+            'medicina' => $medicina,
         ));
     }
 
@@ -35,7 +36,7 @@ class DefaultController extends Controller
         ));
     }
 
-    public function mostrarAction($idTipo)
+    public function mostrarAction($idTipo,$medicina)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -43,12 +44,15 @@ class DefaultController extends Controller
 
         return $this->render('PpaPaloBundle:Default:index.html.twig', array(
             'entitie' => $entitie,
+            'medicina' => $medicina,
         ));
     }
 
-        public function contactoAction()
+        public function contactoAction($medicina)
     {
-            return $this->render('PpaPaloBundle:Default:contacto.html.twig');
+            return $this->render('PpaPaloBundle:Default:contacto.html.twig',array(
+            'medicina' => $medicina,
+        ));
     }
 
     public function pictureAction($idProd)
@@ -73,7 +77,7 @@ class DefaultController extends Controller
         ));
     }
 
-    public function articuloAction($idProd)
+    public function articuloAction($idProd,$medicina)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -81,6 +85,7 @@ class DefaultController extends Controller
 
         return $this->render('PpaPaloBundle:Default:articulo.html.twig', array(
             'entitie' => $entitie,
+            'medicina' => $medicina,
         ));
     }
 }
