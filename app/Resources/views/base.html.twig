@@ -56,21 +56,31 @@
     <![endif]-->
 
     <!-- The fav icon -->
-    <link style="float:left" rel="shortcut icon" href="img/favicon.ico" width="200" heigh="200">
+    <link  rel="shortcut icon" href="img/favicon.ico" width="200" heigh="200">
+
+    <style type="text/css">
+        .brand span {
+            float: right !important;
+            margin-right: -190% !important;
+            margin-top: -65px !important;
+        }
+
+        .brand img {
+            float: none !important;
+        }
+
+    </style>
 </head>
 
 <body>
     <div class="navbar">
         <div class="navbar-inner">
-            <div class="container-fluid">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
+            <div id="asdf">
                 <a class="brand" href="{{path('home', {'medicina' : medicina})}}"> 
-                <img id="logo" style="float left;" src=" {{asset('bundles/ppapalo/img/logooficial.jpg')}}" hspace=3 align="middle"> <span style="clear:both">Sin ustedes quebramos</span>
-
+                <img id="logo" style="float left;" src=" {{asset('bundles/ppapalo/img/logooficial.jpg')}}" hspace=3 align="middle"></img>
+                <span>Sin ustedes quebramos... </span>
+            </div>
+            <div class="container-fluid">
                 <!--<span id="textoLogo">Sin Usted Quebramos</span>--></a>             
               {% if is_granted('ROLE_ADMIN') %}
                  <a href="botoncrate"></a>
@@ -89,9 +99,6 @@
                     </a>
                 </div>
                 {% endif %}               
-
-     
-
 
 
                 <!-- theme selector starts -->
@@ -124,7 +131,8 @@
             <div class="span2 main-menu-span">
                 <div class="well nav-collapse sidebar-nav">
                     <ul class="nav nav-tabs nav-stacked main-menu">
-                        <li class="nav-header hidden-tablet">Categoria</li>
+                        <li class="nav-header hidden-tablet">Categoria</li> 
+                            <li><a class="ajax-link" href="{{path('home', {'medicina' : medicina})}}"><i class="icon-eye-open"></i><span class="hidden-tablet"> Home </span></a></li>
                             {{ render(controller('PpaPaloBundle:Default:lista' )) }}
                             <li><a class="ajax-link" href="{{ path('contacto') }}"><i class="icon-eye-open"></i><span class="hidden-tablet"> Contacto</span></a></li>
                     </ul>
