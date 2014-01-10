@@ -33,6 +33,14 @@ class Imagen
     private $nombre;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="posicion", type="boolean", nullable=true)
+     */
+    private $posicion;
+
+
+    /**
      * @var string
      *
      * @ORM\Column(name="descripcion", type="string", length=255)
@@ -72,6 +80,30 @@ class Imagen
     {
         return $this->nombre;
     }
+
+    /**
+     * Set posicion
+     *
+     * @param boolean $posicion
+     * @return Imagen
+     */
+    public function setPosicion($posicion)
+    {
+        $this->posicion = $posicion;
+    
+        return $this;
+    }
+
+    /**
+     * Get posicion
+     *
+     * @return boolean 
+     */
+    public function getPosicion()
+    {
+        return $this->posicion;
+    }
+
 
     /**
      * Set descripcion

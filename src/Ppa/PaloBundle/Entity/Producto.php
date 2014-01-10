@@ -36,6 +36,14 @@ class Producto
      */
     private $precio;
 
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="oferta", type="integer", nullable=true)
+     */
+    private $oferta;
+
     /**
      * @var string
      *
@@ -109,6 +117,30 @@ class Producto
     {
         return $this->precio;
     }
+
+    /**
+     * Set oferta
+     *
+     * @param integer $oferta
+     * @return Producto
+     */
+    public function setOferta($oferta)
+    {
+        $this->oferta = $oferta;
+    
+        return $this;
+    }
+
+    /**
+     * Get oferta
+     *
+     * @return integer 
+     */
+    public function getOferta()
+    {
+        return $this->oferta;
+    }
+
 
     /**
      * Set descripcion

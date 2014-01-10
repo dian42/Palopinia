@@ -17,6 +17,7 @@ class ProductoType extends AbstractType
         $builder
             ->add('nombre')
             ->add('precio')
+            ->add('oferta')
             ->add('descripcion','textarea')
             ->add('descripcionBreve','textarea')
             ->add('tipoproducto')
