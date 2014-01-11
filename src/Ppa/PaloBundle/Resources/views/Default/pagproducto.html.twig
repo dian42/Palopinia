@@ -8,11 +8,33 @@
 			<div class="box-header well" data-original-title>
 				<h2><i class="icon-th"></i> {{item.nombre}}</h2>
 			</div>
+<<<<<<< HEAD
 			{{ render(controller('PpaPaloBundle:Default:articulo', {'idProd': item.id } )) }}
 		</div>
 			<div class="box span4">
 			<div class="box-header well" data-original-title>
 				<h2><i class="icon-th"></i> Descripción</h2>
+=======
+			<div class="box-content">
+				<div class="box-content">
+					<a style="text-decoration:none"> 
+						{{ render(controller('PpaPaloBundle:Default:articulo', {'idProd': item.id } )) }}
+<<<<<<< HEAD
+
+						<span  id="text_card">
+							<p>Precio : {{item.precio}}</p>
+							<p class="clearfix">{{item.descripcion}}</p>	
+						</span>
+=======
+>>>>>>> vista
+					</a>
+					<span  id="text_card">
+						<p align="left"><FONT FACE="times new roman" SIZE=4>${{item.precio}}</FONT></p>
+						<p><i><u><b> Descripción</p></i></u></b>
+						<p>{{item.descripcion}}</p>	
+					</span>
+				</div>
+>>>>>>> final
 			</div>
 						<div class="box-content">
 
