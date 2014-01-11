@@ -80,7 +80,7 @@ class ImagenController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Crear', 'attr' => array('class' => 'btn btn-success')));
 
         return $form;
     }
@@ -162,7 +162,7 @@ class ImagenController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Cambiar', 'attr' => array('class' => 'btn btn-info')));
 
         return $form;
     }

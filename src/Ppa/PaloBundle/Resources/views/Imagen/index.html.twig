@@ -1,9 +1,9 @@
-{% extends '::base.html.twig' %}
+{% extends '::baseTablas.html.twig' %}
 
 {% block body -%}
     <h1>Imagen list</h1>
 
-    <table class="records_list">
+    <table id="DataTables_Table_0" class="table table-striped table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
@@ -19,25 +19,14 @@
                 <td>{{ entity.nombre }}</td>
                 <td>{{ entity.descripcion }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('imagen_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('imagen_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                    <a class="btn btn-success" href="{{ path('imagen_show', { 'id': entity.id }) }}">Ver</a>
+                    <a class="btn btn-info" href="{{ path('imagen_edit', { 'id': entity.id }) }}">Editar</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-        <ul>
-        <li>
-            <a href="{{ path('imagen_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+    <a class="btn btn-danger" href="{{ path('imagen_new') }}">
+        Nueva Imagen
+    </a>
     {% endblock %}

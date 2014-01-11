@@ -1,15 +1,10 @@
-{% extends '::base.html.twig' %}
+{% extends '::baseTablas.html.twig' %}
 
 {% block body -%}
     <h1>Contacto creation</h1>
 
     {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('contacto') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    <a class="btn" href="{{ path('contacto') }}">
+        Volver a la lista
+    </a>
 {% endblock %}
