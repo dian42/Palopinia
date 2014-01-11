@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <!-- Its not valid html but it works -->
@@ -43,7 +43,7 @@
     <body>
         <div class="nav-section">
             <ul class="nav">
-                <li><a href="{{path('home',{'medicina' : 'Medicina'})}}" class="salud">Salud</a></li>
+                <li><a href="{{path('home',{'medicina' : 'salud'})}}" class="salud">Salud</a></li>
                 <li><a href="#tecno" class="tecno">Tecnología</a></li>
                 <li><a href="#deportes" class="deportes">Deportes</a></li>
                 <li><a href="#contacto" class="contacto">Contacto</a></li>
@@ -72,27 +72,32 @@
             <div class="nav-bar"></div>
             <div class="nav-bar"></div>
         </div>
-        <div class="row-fluid">
-            <div class="span4 well orange fixed-height shadow" id="salud"> <!-- Fixed height for 300px on all devices, shadow for well a shadow and orange for the color -->
-                <h1>Salud</h1>
-                <p class="big"> Camillas, terapias alternativas y artículos médicos.</p>
-            </div>
-            <div class="span8 well fixed-height no-padding">
-                <div class="flexslider" id="slider">
-                    <ul class="slides">
-                        <li>
-                            <img src="{{asset('bundles/ppapalo/img/logooficial.jpg')}}" alt="" />
-                        </li>
-                        <li>
-                            <img src="{{asset('bundles/ppapalo/img/logooficial.jpg')}}" alt="" />
-                        </li>
-                        <li>
-                            <img src="{{asset('bundles/ppapalo/img/logooficial.jpg')}}" alt="" />
-                        </li>
-                        <li>
-                            <img src="{{asset('bundles/ppapalo/img/logooficial.jpg')}}" alt="" />
-                        </li>
-                    </ul>
+        <div id="slider medicina">
+            <div class="row-fluid">
+                <div class="span4 well orange fixed-height shadow" id="salud">
+                    <a href="{{path('home',{'medicina' : 'salud'})}}" style="color:white;text-decoration:none;">
+                    <!-- Fixed height for 300px on all devices, shadow for well a shadow and orange for the color -->
+                        <h1>Salud</h1>
+                        <p class="big"> Camillas, terapias alternativas y artículos médicos.</p>            
+                    </a>
+                </div>
+                <div class="span8 well fixed-height no-padding">
+                    <div class="flexslider" id="slider">
+                        <ul class="slides">
+                            <li>
+                                <a href="{{path('home',{'medicina' : 'salud'})}}"><img src="{{asset('bundles/ppapalo/img/logooficial.jpg')}}" alt="" /></a>
+                            </li>
+                            <li>
+                                <a href="{{path('home',{'medicina' : 'salud'})}}"><img src="{{asset('bundles/ppapalo/img/logooficial.jpg')}}" alt="" /></a>
+                            </li>
+                            <li>
+                                <a href="{{path('home',{'medicina' : 'salud'})}}"><img src="{{asset('bundles/ppapalo/img/logooficial.jpg')}}" alt="" /></a>
+                            </li>
+                            <li>
+                                <a href="{{path('home',{'medicina' : 'salud'})}}"><img src="{{asset('bundles/ppapalo/img/logooficial.jpg')}}" alt="" /></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,14 +110,18 @@
                 </div>
             </div>
             <div class="span5 tealblue well fixed-height hidden-phone"> <!-- hidden-phone hides it on items under 767px, makes it easier to read -->
-                <h1 class="text-right">Tecnología </h1>
-                <p class="text-right"> Accesorios Smartphone</p>
+                <a href="{{path('home',{'medicina' : 'tecnologia'})}}" style="color:white;text-decoration:none;">
+                    <h1 class="text-right">Tecnología </h1>
+                    <p class="text-right"> Accesorios Smartphone</p>
+                </a>
             </div>
         </div>
       <div class="row-fluid" id="deportes">
             <div class="span4 well purple fixed-height shadow"> <!-- Fixed height for 300px on all devices, shadow for well a shadow and orange for the color -->
-                <h1>Deportes  </h1>
-                <p class="big">Paintball, tatamis y mesas de pool.</p>
+                <a href="{{path('home',{'medicina' : 'deportes'})}}">
+                    <h1>Deportes  </h1>
+                    <p class="big">Paintball, tatamis y mesas de pool.</p>
+                </a>
             </div>
             <div class="span8 well fixed-height no-padding">    
                 <img src="{{asset('bundles/ppapalo/img/logooficial.jpg')}}" alt="" />
