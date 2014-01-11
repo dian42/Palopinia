@@ -18,6 +18,10 @@ PpaPaloBundle_tipoproducto:
     resource: "@PpaPaloBundle/Resources/config/routing/tipoproducto.yml"
     prefix:   /tipoproducto
 
+PpaPaloBundle_contacto:
+    resource: "@PpaPaloBundle/Resources/config/routing/contacto.yml"
+    prefix:   /contacto
+
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
