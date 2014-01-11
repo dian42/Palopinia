@@ -1,7 +1,7 @@
 {% extends '::baseTablas.html.twig' %}
 
 {% block body -%}
-    <h1>Producto list</h1>
+    <h1>Lista Productos</h1>
 
     <table id="DataTables_Table_0" class="table table-striped table-bordered">
         <thead>
@@ -25,6 +25,7 @@
                 <td>
                     <a class="btn btn-success" href="{{ path('producto_show', { 'id': entity.id }) }}">Ver</a>
                     <a class="btn btn-info" href="{{ path('producto_edit', { 'id': entity.id }) }}">Editar</a>
+                    <a class="btn btn-success" href="{{path('imagen_new')}}">Crear Imagen</a>
                 </td>
             </tr>
         {% endfor %}

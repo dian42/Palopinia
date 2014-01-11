@@ -86,6 +86,18 @@
                 </a>
             </div>
               {% if is_granted('ROLE_ADMIN') %}
+                  <div class="btn-group pull-left theme-container" >
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span class="hidden-phone"> Cambiarme de Categoria</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{path('home',{'medicina':'salud'})}}">Salud</a></li>
+                        <li><a href="{{path('home',{'medicina':'tecnologia'})}}"> Tecnología</a></li>
+                        <li><a href="{{path('home',{'medicina':'deportes'})}}">Deporte</a></li>
+
+                    </ul>
+                </div>
                  <a href="botoncrate" style="margin-top: 55px; !important"></a>
                  <div align="right" style="margin-top: 55px;">
                  <a class="btn btn-success" href="{{path('user_logout')}}">
@@ -100,6 +112,9 @@
                  <a class="btn btn-success" href="{{path('imagen_new')}}">
                     <i class="icon-tags icon-white"></i>
                         Crear Imagen
+                    </a>
+                <a class="btn btn-success" href="{{path('contacto_new')}}">
+                    Crear Contacto
                     </a>
                 </div>
                 {% endif %}               
