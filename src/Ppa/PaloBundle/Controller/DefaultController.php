@@ -98,7 +98,11 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entitie = $em->getRepository('PpaPaloBundle:Imagen')->findOneByProducto($idProd);
+        $entitie = $em->getRepository('PpaPaloBundle:Imagen')->findOneBy(array('producto' => $idProd, 'posicion' => 1));
+
+        if ($entitie == null) {
+                    $entitie = $em->getRepository('PpaPaloBundle:Imagen')->findOneByProducto($idProd);
+        }
 
         return $this->render('PpaPaloBundle:Default:picture.html.twig', array(
             'entitie' => $entitie,
