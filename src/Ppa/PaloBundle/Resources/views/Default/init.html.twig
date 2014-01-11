@@ -14,7 +14,7 @@
         {% endstylesheets %}
         {% stylesheets 
             '@PpaPaloBundle/Resources/public/css/flexslider-init.css'
-            '@PpaPaloBundle/Resources/public/style-init.css'
+            '@PpaPaloBundle/Resources/public/css/style-init.css'
             filter='cssrewrite' %}
             <link rel="stylesheet" href="{{ asset_url }}" >
         {% endstylesheets %}
@@ -43,7 +43,7 @@
     <body>
         <div class="nav-section">
             <ul class="nav">
-                <li><a href="#salud" class="salud">Salud</a></li>
+                <li><a href="{{path('home',{'medicina' : 'Medicina'})}}" class="salud">Salud</a></li>
                 <li><a href="#tecno" class="tecno">Tecnología</a></li>
                 <li><a href="#deportes" class="deportes">Deportes</a></li>
                 <li><a href="#contacto" class="contacto">Contacto</a></li>

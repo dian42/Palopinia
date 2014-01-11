@@ -30,6 +30,7 @@ assetic:
     debug:          %kernel.debug%
     use_controller: false
     bundles:        [ 'FOSUserBundle' ]
+    bundles:        [ 'PpaPaloBundle' ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
