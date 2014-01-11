@@ -1,4 +1,4 @@
-
+{% extends '::baseTablas.html.twig' %}
 
 {% block body -%}
     <h2>Editar imagen</h2>
@@ -7,22 +7,15 @@
         <input type="hidden" name="_method" value="PUT" />
         {{ form_widget(edit_form) }}
         <p>
-            <button type="submit">Edit</button>
+            <button class="btn btn-info" type="submit">Cambiar</button>
         </p>
     </form>
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('imagen') }}">
-            Back to the list
+        <a class="btn" href="{{ path('imagen') }}">
+            Volver a la lista
         </a>
-    </li>
-    <li>
         <form action="{{ path('imagen_delete', { 'id': entity.id }) }}" method="post">
             <input type="hidden" name="_method" value="DELETE" />
             {{ form_widget(delete_form) }}
-            <button type="submit">Delete</button>
+            <button class="btn btn-danger"type="submit">Borrar</button>
         </form>
-    </li>
-</ul>
 {% endblock %}

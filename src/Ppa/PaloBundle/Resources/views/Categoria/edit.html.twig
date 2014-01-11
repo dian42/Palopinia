@@ -1,16 +1,10 @@
-
+{% extends '::baseTablas.html.twig' %}
 
 {% block body -%}
-    <h1>Categoria edit</h1>
+    <h1>Categoria edit</h1><br>
 
     {{ form(edit_form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('categoria') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        <a class="btn btn-succes" href="{{ path('categoria') }}">
+            Ver lista
+        </a>{{ form(delete_form) }}
 {% endblock %}

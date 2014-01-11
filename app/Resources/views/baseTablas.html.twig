@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link type="image/x-icon" href="'bundles/ppapalo/img/pp.ico" rel="icon" />
-    <link type="image/x-icon" href="pp.ico" rel="shortcut icon" /> 
+
     <meta charset="utf-8">
-    <title> Importadora Palo Piña</title>
+    <title> Tablas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- The styles -->
     {% stylesheets filter='cssrewrite' '@PpaPaloBundle/Resources/public/css/bootstrap-spacelab.css' %}
@@ -57,37 +56,13 @@
 
     <!-- The fav icon -->
 
-    <style type="text/css">
-        .brand span {
-            margin-left: 178px;
-            margin-right: -212% !important;
-            margin-top: -65px !important;
-        }
-
-        .brand img {
-            float: none !important;
-        }
-
-        .row-fluid > div {
-            margin-right: 50px;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="navbar-inner">
-            <div class="container-fluid">
-                <!--<span id="textoLogo">Sin Usted Quebramos</span>-->
-                <div id="asdf">
-                <a class="brand" href="{{path('home',{'medicina' : medicina })}}"> 
-                    <img id="logo" style="float left;" src=" {{asset('bundles/ppapalo/img/logooficial.jpg')}}"></img>
-                    <span>Sin ustedes quebramos... </span>
-                </a>
-            </div>
+    <div class="navbar">        
               {% if is_granted('ROLE_ADMIN') %}
-                 <a href="botoncrate" style="margin-top: 55px; !important"></a>
-                 <div align="right" style="margin-top: 55px;">
+                 <a href="botoncrate"></a>
+                 <div align="right" >
                  <a class="btn btn-success" href="{{path('user_logout')}}">
                     <span>Logout</span>
                     </a>
@@ -97,14 +72,11 @@
                  <a class="btn btn-success" href="{{path('tipoproducto_new')}}">
                         Crear Tipo Producto
                     </a>
-                 <a class="btn btn-success" href="{{path('imagen_new')}}">
-                    <i class="icon-tags icon-white"></i>
-                        Crear Imagen
-                    </a>
                 </div>
                 {% endif %}               
 
-              <!-- theme selector starts -->
+
+                <!-- theme selector starts -->
 
                 <!-- theme selector ends -->
                 
@@ -126,28 +98,8 @@
             </div>
         </div>
     </div>
-    <!-- topbar ends -->
-    <div class="container-fluid">
-        <div class="row-fluid">
-                
-            <!-- left menu starts -->
-            <div class="span2 main-menu-span">
-                <div class="well nav-collapse sidebar-nav">
-                    <ul class="nav nav-tabs nav-stacked main-menu">
-                        <li class="nav-header hidden-tablet">Categoria</li> 
-                            <li><a class="ajax-link" href="{{path('home', {'medicina' : medicina})}}"><i class="icon-eye-open"></i><span class="hidden-tablet"> Home </span></a></li>
-                            {{ render(controller('PpaPaloBundle:Default:lista', {'medicina' : medicina} )) }}
-                            <li><a class="ajax-link" href="{{ path('contact', {'medicina' : medicina}) }}"><i class="icon-eye-open"></i><span class="hidden-tablet"> Contacto</span></a></li>
-                    </ul>
-                </div><!--/.well -->
-            </div><!--/span-->
-            <!-- left menu ends -->
             
-            
-
-
-            
-            <div id="content" style="margin-left: 215px;">
+            <div id="content" style="margin-left: 20px; margin-right:20px; margin-top:100px;">
             <!-- content starts -->
             
 
@@ -159,29 +111,6 @@
        
                     <!-- content ends -->
             </div><!--/#content.span10-->
-        </div><!--/fluid-row-->
-                
-        <hr>
-
-        <div class="modal hide fade" id="myModal">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h3>Settings</h3>
-            </div>
-            <div class="modal-body">
-                <p>Here settings can be configured...</p>
-            </div>
-            <div class="modal-footer">
-                <a href="#" class="btn" data-dismiss="modal">Close</a>
-                <a href="#" class="btn btn-primary">Save changes</a>
-            </div>
-        </div>
-
-        <footer>
-        </footer>
-        
-    </div><!--/.fluid-container-->
-
     <!-- external javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

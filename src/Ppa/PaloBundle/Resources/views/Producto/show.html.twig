@@ -1,8 +1,9 @@
+{% extends '::baseTablas.html.twig' %}
 
 {% block body -%}
     <h1>Producto</h1>
 
-    <table class="record_properties">
+    <table id="DataTables_Table_0" class="table table-striped table-bordered">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -22,18 +23,11 @@
             </tr>
         </tbody>
     </table>
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('producto') }}">
-            Back to the list
+        <a class="btn" href="{{ path('producto') }}">
+            Volver a la lista
+        </a><br>
+        <a class="btn btn-info" href="{{ path('producto_edit', { 'id': entity.id }) }}">
+            Editar
         </a>
-    </li>
-    <li>
-        <a href="{{ path('producto_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        {{ form(delete_form) }}
 {% endblock %}

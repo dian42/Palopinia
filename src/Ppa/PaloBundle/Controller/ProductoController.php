@@ -63,7 +63,7 @@ class ProductoController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Crear', 'attr' => array('class' => 'btn btn-success')));
 
         return $form;
     }
@@ -142,7 +142,7 @@ class ProductoController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Cambiar', 'attr' => array('class' => 'btn btn-info')));
 
         return $form;
     }
@@ -212,7 +212,7 @@ class ProductoController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('producto_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Borrar', 'attr' => array('class' => 'btn btn-danger')))
             ->getForm()
         ;
     }
