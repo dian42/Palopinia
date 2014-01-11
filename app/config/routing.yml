@@ -1,8 +1,6 @@
 ppaPalo:
     resource: "@PpaPaloBundle/Resources/config/routing.yml"
-    prefix: /{medicina}/
-    requirements:
-        medicina:  Medicina|Poto
+    prefix: /
 
 PpaPaloBundle_producto:
     resource: "@PpaPaloBundle/Resources/config/routing/producto.yml"

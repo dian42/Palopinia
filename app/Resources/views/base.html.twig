@@ -77,14 +77,14 @@
         <div class="navbar-inner">
             <div id="asdf">
                 <a class="brand" href="{{path('home', {'medicina' : medicina})}}"> 
-                <img id="logo" style="float left;" src=" {{asset('bundles/ppapalo/img/logooficial.jpg')}}" hspace=3 align="middle"></img>
-                <span>Sin ustedes quebramos... </span>
+                    <img id="logo" style="float left;" src=" {{asset('bundles/ppapalo/img/logooficial.jpg')}}" hspace=3 align="middle"></img>
+                    <span>Sin ustedes quebramos... </span>
+                </a>
             </div>
+            
             <div class="container-fluid">
-                <!--<span id="textoLogo">Sin Usted Quebramos</span>--></a>             
               {% if is_granted('ROLE_ADMIN') %}
-                 <a href="botoncrate"></a>
-                 <div align="right" >
+                <div align="right" >
                  <a class="btn btn-success" href="{{path('user_logout')}}">
                     <i class="icon-off icon-white"></i>
                         Logout
@@ -97,11 +97,14 @@
                     <i class="icon-tags icon-white"></i>
                         Crear Tipo Producto
                     </a>
+                 <a class="btn btn-success" href="{{path('imagen_new')}}">
+                    <i class="icon-tags icon-white"></i>
+                        Crear Imagen
+                    </a>
                 </div>
                 {% endif %}               
 
-
-                <!-- theme selector starts -->
+              <!-- theme selector starts -->
 
                 <!-- theme selector ends -->
                 

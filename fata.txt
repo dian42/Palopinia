@@ -1,13 +1,8 @@
 falta 
-    login 
-    pagina de cada producto 
-    estilizar la muestra en index
-    pag inicial grande o total esa con 2 imagenes
-    renderizar todo
-    restrici'on q tipo de imagen sube
-    hacer enlaces directons hacia los ingresos 
-    hacer not null las variables foraneas 
-    eliminar mostrar bool o modificarlo 
+	imagen principal
+	inicio
+	contacto hacer 
+	
     
 
 

@@ -13,6 +13,11 @@ use Ppa\PaloBundle\Form\ProductoType;
 
 class DefaultController extends Controller
 {
+    public function initAction()
+    {
+        return $this->render('PpaPaloBundle:Default:init.html.twig');
+    }
+
     public function indexAction($medicina)
     {
         $em = $this->getDoctrine()->getManager();

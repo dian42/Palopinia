@@ -1,12 +1,23 @@
-home:
+init:
     path:  /
+    defaults: { _controller: PpaPaloBundle:Default:init }
+home:
+    path:  /{medicina}/
     defaults: { _controller: PpaPaloBundle:Default:index }
+    requirements:
+        medicina:  Medicina|Poto
 mostrar:
-    path:  /mostrar/{idTipo}
+    path:  /{medicina}/mostrar/{idTipo}
     defaults: { _controller: PpaPaloBundle:Default:mostrar }
+    requirements:
+        medicina:  Medicina|Poto
 contact:
-    path:  /contacto
+    path:  /{medicina}/contacto
     defaults: { _controller: PpaPaloBundle:Default:contacto }
+    requirements:
+        medicina:  Medicina|Poto
 pagproducto:
-    path:  /articulo/{idProd}
+    path:  /{medicina}/articulo/{idProd}
     defaults: { _controller: PpaPaloBundle:Default:pagproducto }
+    requirements:
+        medicina:  Medicina|Poto
