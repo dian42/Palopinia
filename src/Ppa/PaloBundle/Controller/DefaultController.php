@@ -19,7 +19,16 @@ class DefaultController extends Controller
 
         $category = $em->getRepository('PpaPaloBundle:Categoria')->findOneByNombre($medicina);
 
-        $entitie = $em->getRepository('PpaPaloBundle:Producto')->findAll();
+        $entities = $category->getTipoproductos();
+
+        foreach ($entities as $grade) {
+            $enti = $grade->getProductos();
+            foreach ($enti as $gr) {
+                $entitie[] = $gr;
+            }
+        }
+
+//        $entitie = $em->getRepository('PpaPaloBundle:Producto')->findAll();
 
         return $this->render('PpaPaloBundle:Default:index.html.twig', array(
             'entitie' => $entitie,
@@ -31,7 +40,11 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('PpaPaloBundle:TipoProducto')->findAll();
+        $category = $em->getRepository('PpaPaloBundle:Categoria')->findOneByNombre($medicina);
+
+        $entities = $category->getTipoproductos();
+
+       // $entities = $em->getRepository('PpaPaloBundle:TipoProducto')->findAll();
 
         return $this->render('PpaPaloBundle:Default:lista.html.twig', array(
             'entities' => $entities,
