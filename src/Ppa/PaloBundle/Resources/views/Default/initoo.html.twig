@@ -6,18 +6,23 @@
         <title>Palo Piña</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- Le styles -->
-        {% stylesheets 
-            '@PpaPaloBundle/Resources/public/css/bootstrap-init.css'
-            '@PpaPaloBundle/Resources/public/css/bootstrap-responsive-init.css'
-            filter='cssrewrite' %}
-            <link rel="stylesheet" type="text/css" href="{{ asset_url }}" >
+        {% stylesheets filter='cssrewrite' '@PpaPaloBundle/Resources/public/css/bootstrap-init.css' %}
+            <link  rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
-        {% stylesheets 
-            '@PpaPaloBundle/Resources/public/css/flexslider-init.css'
-            '@PpaPaloBundle/Resources/public/style-init.css'
-            filter='cssrewrite' %}
-            <link rel="stylesheet" href="{{ asset_url }}" >
-        {% endstylesheets %}
+
+
+         {% stylesheets 
+        
+        '@PpaPaloBundle/Resources/public/css/bootstrap-responsive-init.css'
+        '@PpaPaloBundle/Resources/public/css/flexslider-init.css'
+        '@PpaPaloBundle/Resources/public/css/style-init.css'
+        filter='cssrewrite' %}
+        <!--
+        <link href="assets/css/bootstrap-init.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/bootstrap-responsive-init.css" rel="stylesheet" type="text/css" /> 
+        <link href="assets/css/flexslider-init.css" rel="stylesheet" />
+        <link href="assets/css/style-init.css" rel="stylesheet" />
+        -->
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
         <script src="assets/js/html5shiv.js"></script>
@@ -27,9 +32,9 @@
             .gradient { filter: none; }
         </style>
         <![endif]-->
- 
+
         <!-- Fav and touch icons -->
- <!--
+<!--
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png" />
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png" />
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png" />
@@ -81,16 +86,16 @@
                 <div class="flexslider" id="slider">
                     <ul class="slides">
                         <li>
-                            <img src="{{asset('bundles/ppapalo/img/logooficial.jpg')}}" alt="" />
+                            <img src="assets/img/slider-1.jpg" alt="" />
                         </li>
                         <li>
-                            <img src="{{asset('bundles/ppapalo/img/logooficial.jpg')}}" alt="" />
+                            <img src="assets/img/slider-2.jpg" alt="" />
                         </li>
                         <li>
-                            <img src="{{asset('bundles/ppapalo/img/logooficial.jpg')}}" alt="" />
+                            <img src="assets/img/slider-3.jpg" alt="" />
                         </li>
                         <li>
-                            <img src="{{asset('bundles/ppapalo/img/logooficial.jpg')}}" alt="" />
+                            <img src="assets/img/slider-4.jpg" alt="" />
                         </li>
                     </ul>
                 </div>
@@ -115,7 +120,7 @@
                 <p class="big">Paintball, tatamis y mesas de pool.</p>
             </div>
             <div class="span8 well fixed-height no-padding">    
-                <img src="{{asset('bundles/ppapalo/img/logooficial.jpg')}}" alt="" />
+                <img src="assets/img/slider-1.jpg" alt="" />
             </div>
 
        </div>
@@ -171,36 +176,33 @@
         <!-- Le javascript
             ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
+        <!--
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        {% javascripts
-            '@PpaPaloBundle/Resources/public/js/init/jquery.flexslider-min.js'
-            '@PpaPaloBundle/Resources/public/js/init/jquery.fitvids.js'
-            '@PpaPaloBundle/Resources/public/js/init/smoothscroll.js'
-
-            output="filename.js" %}
-            <script src="{{ asset_url }}"></script>
-        {% endjavascripts %}
-        {% javascripts
-            '@PpaPaloBundle/Resources/public/js/init/jquery.backstretch.min.js'
-
-            output="filename.js" %}
-            <script src="{{ asset_url }}" type="text/javascript"></script>
-        {% endjavascripts %}
-        {% javascripts
-            '@PpaPaloBundle/Resources/public/js/init/bootstrap.min.js'
-
-            output="filename.js" %}
-            <script src="{{ asset_url }}" ></script>
-        {% endjavascripts %}
+        <script src="assets/js/jquery.flexslider-min.js"></script>
+        <script src="assets/js/jquery.fitvids.js"></script>
+        <script src="assets/js/smoothscroll.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js" type="text/javascript"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src=""></script>
+        <script src="assets/js/gmaps.js" type="text/javascript"></script>
+        <script src="assets/js/script.js" type="text/javascript"></script>
+        -->
         {% javascripts
-            '@PpaPaloBundle/Resources/public/js/init/gmaps.js'
-            '@PpaPaloBundle/Resources/public/js/init/script.js'
 
+        '@PpaPaloBundle/Resources/public/js/init/jquery.min.js'
+        '@PpaPaloBundle/Resources/public/js/init/jquery.flexslider-min.js"'
+        '@PpaPaloBundle/Resources/public/js/init/jquery.fitvids.js'
+        '@PpaPaloBundle/Resources/public/js/init/smoothscroll.js'
+        '@PpaPaloBundle/Resources/public/js/init/jquery.backstretch.min.js'
+        '@PpaPaloBundle/Resources/public/js/init/bootstrap.min.js'
+        '@PpaPaloBundle/Resources/public/js/init/gmaps.js'
+        '@PpaPaloBundle/Resources/public/js/init/script.js'
 
-            output="filename.js" %}
-            <script src="{{ asset_url }}" type="text/javascript"></script>
+        output="filename.js" %}
+        <script>menu(); backstretch(); slider(); contentslider(); map(); panels(); blogposts();</script>
         {% endjavascripts %}
-        <script>menu(); backstretch(); slider(); contentslider(); map(); panels(); blogposts();</script> 
+
+
+
     </body>
 </html>
