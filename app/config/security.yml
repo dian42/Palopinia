@@ -31,3 +31,4 @@ security:
         - { path: ^/tipoproducto, role: ROLE_ADMIN }
         - { path: ^/imagen, role: ROLE_ADMIN }
         - { path: ^/categoria, role: ROLE_ADMIN }
+        - { path: ^/contacto, role: ROLE_ADMIN }

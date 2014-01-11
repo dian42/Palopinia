@@ -17,6 +17,8 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+        $category = $em->getRepository('PpaPaloBundle:Categoria')->findOneByNombre($medicina);
+
         $entitie = $em->getRepository('PpaPaloBundle:Producto')->findAll();
 
         return $this->render('PpaPaloBundle:Default:index.html.twig', array(
@@ -25,7 +27,7 @@ class DefaultController extends Controller
         ));
     }
 
-    public function listaAction()
+    public function listaAction($medicina)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -33,10 +35,11 @@ class DefaultController extends Controller
 
         return $this->render('PpaPaloBundle:Default:lista.html.twig', array(
             'entities' => $entities,
+            'medicina' => $medicina,
         ));
     }
 
-    public function mostrarAction($idTipo,$medicina)
+    public function mostrarAction($idTipo, $medicina)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -66,7 +69,7 @@ class DefaultController extends Controller
         ));
     }
 
-    public function pagproductoAction($idProd)
+    public function pagproductoAction($idProd, $medicina)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -74,10 +77,11 @@ class DefaultController extends Controller
 
         return $this->render('PpaPaloBundle:Default:pagproducto.html.twig', array(
             'entities' => $entities,
+            'medicina' => $medicina,
         ));
     }
 
-    public function articuloAction($idProd,$medicina)
+    public function articuloAction($idProd)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -85,7 +89,6 @@ class DefaultController extends Controller
 
         return $this->render('PpaPaloBundle:Default:articulo.html.twig', array(
             'entitie' => $entitie,
-            'medicina' => $medicina,
         ));
     }
 }

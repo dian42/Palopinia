@@ -2,7 +2,7 @@ ppaPalo:
     resource: "@PpaPaloBundle/Resources/config/routing.yml"
     prefix: /{medicina}/
     requirements:
-        medicina:  Cara|Poto
+        medicina:  Medicina|Poto
 
 PpaPaloBundle_producto:
     resource: "@PpaPaloBundle/Resources/config/routing/producto.yml"
@@ -22,7 +22,7 @@ PpaPaloBundle_tipoproducto:
 
 PpaPaloBundle_contacto:
     resource: "@PpaPaloBundle/Resources/config/routing/contacto.yml"
-    prefix:   /contacto
+    prefix:   /Contacto
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

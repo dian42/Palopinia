@@ -133,8 +133,8 @@
                     <ul class="nav nav-tabs nav-stacked main-menu">
                         <li class="nav-header hidden-tablet">Categoria</li> 
                             <li><a class="ajax-link" href="{{path('home', {'medicina' : medicina})}}"><i class="icon-eye-open"></i><span class="hidden-tablet"> Home </span></a></li>
-                            {{ render(controller('PpaPaloBundle:Default:lista' )) }}
-                            <li><a class="ajax-link" href="{{ path('contacto') }}"><i class="icon-eye-open"></i><span class="hidden-tablet"> Contacto</span></a></li>
+                            {{ render(controller('PpaPaloBundle:Default:lista', {'medicina' : medicina} )) }}
+                            <li><a class="ajax-link" href="{{ path('contact', {'medicina' : medicina}) }}"><i class="icon-eye-open"></i><span class="hidden-tablet"> Contacto</span></a></li>
                     </ul>
                 </div><!--/.well -->
             </div><!--/span-->

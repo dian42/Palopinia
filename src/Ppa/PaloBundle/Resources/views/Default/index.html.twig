@@ -16,12 +16,12 @@
 
 						<!-- asdads dasd  -->
 								<div id="info" class="tab-pane active"  align="center" >
-									<?--<a href="{{ path('pagproducto', {'idProd': item.id})}}">
-										{{ render(controller('PpaPaloBundle:Default:picture', {'idProd': item.id } )) }}
+									<?--<a href="{{ path('pagproducto', {'idProd': item.id , 'medicina' : medicina})}}">
+										{{ render(controller('PpaPaloBundle:Default:picture', {'idProd': item.id , 'medicina' : medicina})) }}
 									</a>
 											<FONT FACE="times new roman" SIZE=3.5 color=0BA457>${{item.precio}}</FONT>
 											<p>{{item.descripcionBreve}}</p>
-				  						<br><a href="{{ path('pagproducto', {'idProd': item.id})}}" class="btn btn-primary btn-lg active btn btn-info" role="button" shadow: 0 1px 3px rgba(0,0,0,.25)>Características</a>
+				  						<br><a href="{{ path('pagproducto', {'idProd': item.id , 'medicina' : medicina})}}" class="btn btn-primary btn-lg active btn btn-info" role="button" shadow: 0 1px 3px rgba(0,0,0,.25)>Características</a>
 				  					</p>
 								</div>
 						<!-- asdads dasd  -->
