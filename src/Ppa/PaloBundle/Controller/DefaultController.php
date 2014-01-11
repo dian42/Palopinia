@@ -66,8 +66,26 @@ class DefaultController extends Controller
 
         public function contactoAction($medicina)
     {
-            return $this->render('PpaPaloBundle:Default:contacto.html.twig',array(
+        $em = $this->getDoctrine()->getManager();
+
+        $category = $em->getRepository('PpaPaloBundle:Categoria')->findOneByNombre($medicina);
+
+        $contacto = $em->getRepository('PpaPaloBundle:Contacto')->findAll();
+        $entitie = null;
+        foreach ($contacto as $grade) {
+            $enti = $grade->getCategorias();
+            foreach ($enti as $gr) {
+                if ( $gr === $category) {
+                    $entitie[] = $grade;
+                }
+            }
+        }
+
+
+
+        return $this->render('PpaPaloBundle:Default:contacto.html.twig',array(
             'medicina' => $medicina,
+            'ent' => $entitie,
         ));
     }
 

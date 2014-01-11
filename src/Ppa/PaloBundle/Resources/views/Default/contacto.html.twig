@@ -1,8 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {%block body%}
-	<ul>
-    <li>Contacto</li>
+    <h1>Contacto</h1>
 		<div class="box span3" >
 			<div class="box-header well" data-original-title>
 				<h2><i class="icon-eye-open"></i> Contacto</h2>
@@ -18,9 +17,14 @@
 					<dt>Nelson Dussaubat Pedersen</dt>
 					<dd>Teléfono : 192319823791</dd>
 					<dl>
-					
+
+				{% for item in ent %}
+					<dl>
+					<dt>{{ item.nombre }}</dt>
+					<dd>Teléfono : {{item.telefono}}</dd>
+					<dl>
+				{% endfor %}
 				</div>
 			</div>
 		</div>
-   </ul>
 {% endblock %}
