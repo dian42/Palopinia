@@ -47,7 +47,7 @@ class ImagenController extends Controller
         $form->handleRequest($request);
 
 
-        if ($form->isValid() && 'jpeg' === $entity->getPath()) {
+        if ($form->isValid()) {
 
             $em = $this->getDoctrine()->getManager();
 
