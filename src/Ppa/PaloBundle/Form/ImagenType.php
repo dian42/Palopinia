@@ -16,7 +16,8 @@ class ImagenType extends AbstractType
     {
         $builder
             ->add('nombre', null , array ( 'label' => 'Título' ) )
-            ->add('descripcion', null , array ( 'label' => 'Descripción' ) )
+            ->add('posicion', 'checkbox', array( 'label' => 'Elija si sera la imagen por defecto', 'required'  => false, 'value' => 0,))
+            ->add('descripcion','textarea', array ( 'label' => 'Descripción' ) )
             ->add('producto', null , array ( 'label' => 'Producto' ) )
             ->add('file')
         ;

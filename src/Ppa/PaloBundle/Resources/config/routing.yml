@@ -4,8 +4,8 @@ home:
 mostrar:
     path:  /mostrar/{idTipo}
     defaults: { _controller: PpaPaloBundle:Default:mostrar }
-contacto:
-    path:  /contacto
+contact:
+    path:  /contact
     defaults: { _controller: PpaPaloBundle:Default:contacto }
 pagproducto:
     path:  /articulo/{idProd}

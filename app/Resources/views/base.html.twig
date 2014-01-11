@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 
     <meta charset="utf-8">
@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- The styles -->
-    {% stylesheets 'bundles/ppapalo/css/*' filter='cssrewrite' %}
-        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% stylesheets filter='cssrewrite' '@PpaPaloBundle/Resources/public/css/bootstrap-spacelab.css' %}
+        <link  rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
 
     <style type="text/css">
@@ -19,6 +19,36 @@
         padding: 9px 0;
       }
     </style>
+    {% stylesheets 
+        '@PpaPaloBundle/Resources/public/css/bootstrap-responsive.css'
+        '@PpaPaloBundle/Resources/public/css/charisma-app.css'
+        '@PpaPaloBundle/Resources/public/css/jquery-ui-1.8.21.custom.css'
+        '@PpaPaloBundle/Resources/public/css/fullcalendar.css'
+     filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" >
+    {% endstylesheets %}
+    {% stylesheets 
+        '@PpaPaloBundle/Resources/public/css/fullcalendar.print.css'
+     filter='cssrewrite' %}
+        <link media="print" rel="stylesheet" href="{{ asset_url }}" >
+    {% endstylesheets %}
+    {% stylesheets 
+        '@PpaPaloBundle/Resources/public/css/chosen.css'
+        '@PpaPaloBundle/Resources/public/css/uniform.default.css'
+        '@PpaPaloBundle/Resources/public/css/colorbox.css'
+        '@PpaPaloBundle/Resources/public/css/jquery.cleditor.css'
+        '@PpaPaloBundle/Resources/public/css/jquery.noty.css'
+        '@PpaPaloBundle/Resources/public/css/noty_theme_default.css'
+        '@PpaPaloBundle/Resources/public/css/elfinder.min.css'
+        '@PpaPaloBundle/Resources/public/css/elfinder.theme.css'
+        '@PpaPaloBundle/Resources/public/css/jquery.iphone.toggle.css'
+        '@PpaPaloBundle/Resources/public/css/opa-icons.css'
+        '@PpaPaloBundle/Resources/public/css/uploadify.css'
+        '@PpaPaloBundle/Resources/public/css/general.css'
+     filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" >
+    {% endstylesheets %}
+
 
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -26,25 +56,36 @@
     <![endif]-->
 
     <!-- The fav icon -->
-    <link rel="shortcut icon" href="img/favicon.ico">
-        
+    <link  rel="shortcut icon" href="img/favicon.ico" width="200" heigh="200">
+
+    <style type="text/css">
+        .brand span {
+            float: right !important;
+            margin-right: -190% !important;
+            margin-top: -65px !important;
+        }
+
+        .brand img {
+            float: none !important;
+        }
+
+    </style>
 </head>
 
 <body>
     <div class="navbar">
         <div class="navbar-inner">
-            <div class="container-fluid">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
+            <div id="asdf">
                 <a class="brand" href="{{path('home')}}"> 
-                <img id="logo" alt="Palo Piña Logo" src=" {{asset('bundles/ppapalo/img/logooficial.jpg')}}" /> 
-                <span id="textoLogo">Sin Usted Quebramos</span></a>
-              
+                <img id="logo" style="float left;" src=" {{asset('bundles/ppapalo/img/logooficial.jpg')}}" hspace=3 align="middle"></img>
+                <span>Sin ustedes quebramos... </span>
+            </div>
+            <div class="container-fluid">
+
+
+                <!--<span id="textoLogo">Sin Usted Quebramos</span>--></a>             
               {% if is_granted('ROLE_ADMIN') %}
-                 <div align="right" >
+                <div align="right" >
                  <a class="btn btn-success" href="{{path('user_logout')}}">
                     <i class="icon-off icon-white"></i>
                         Logout
@@ -60,7 +101,8 @@
                 </div>
                 {% endif %}               
 
-              <!-- theme selector starts -->
+
+                <!-- theme selector starts -->
 
                 <!-- theme selector ends -->
                 
@@ -90,7 +132,8 @@
             <div class="span2 main-menu-span">
                 <div class="well nav-collapse sidebar-nav">
                     <ul class="nav nav-tabs nav-stacked main-menu">
-                        <li class="nav-header hidden-tablet">Categoria</li>
+                        <li class="nav-header hidden-tablet">Categoria</li> 
+                            <li><a class="ajax-link" href="{{path('home')}}"><i class="icon-eye-open"></i><span class="hidden-tablet"> Home </span></a></li>
                             {{ render(controller('PpaPaloBundle:Default:lista' )) }}
                             <li><a class="ajax-link" href="{{ path('contacto') }}"><i class="icon-eye-open"></i><span class="hidden-tablet"> Contacto</span></a></li>
                     </ul>
@@ -145,7 +188,47 @@
     {% stylesheets 'bundles/ppapalo/js/*' filter='cssrewrite' %}
         <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}-->
-    {% javascripts 'bundles/ppapalo/js/*' output="filename.js" %}
+    {% javascripts
+        '@PpaPaloBundle/Resources/public/js/jquery-1.7.2.min.js'
+        '@PpaPaloBundle/Resources/public/js/jquery-ui-1.8.21.custom.min.js'
+        '@PpaPaloBundle/Resources/public/js/bootstrap-transition.js'
+        '@PpaPaloBundle/Resources/public/js/bootstrap-alert.js'
+        '@PpaPaloBundle/Resources/public/js/bootstrap-modal.js'
+        '@PpaPaloBundle/Resources/public/js/bootstrap-dropdown.js'
+        '@PpaPaloBundle/Resources/public/js/bootstrap-scrollspy.js'
+        '@PpaPaloBundle/Resources/public/js/bootstrap-tab.js'
+        '@PpaPaloBundle/Resources/public/js/bootstrap-tooltip.js'
+        '@PpaPaloBundle/Resources/public/js/bootstrap-popover.js'
+        '@PpaPaloBundle/Resources/public/js/bootstrap-button.js'
+        '@PpaPaloBundle/Resources/public/js/bootstrap-collapse.js'
+        '@PpaPaloBundle/Resources/public/js/bootstrap-carousel.js'
+        '@PpaPaloBundle/Resources/public/js/bootstrap-typeahead.js'
+        '@PpaPaloBundle/Resources/public/js/bootstrap-tour.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.cookie.js'
+        '@PpaPaloBundle/Resources/public/js/fullcalendar.min.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.dataTables.min.js'
+        '@PpaPaloBundle/Resources/public/js/excanvas.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.flot.min.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.flot.pie.min.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.flot.stack.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.flot.resize.min.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.chosen.min.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.uniform.min.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.colorbox.min.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.cleditor.min.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.noty.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.elfinder.min.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.raty.min.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.iphone.toggle.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.autogrow-textarea.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.uploadify-3.1.min.js'
+        '@PpaPaloBundle/Resources/public/js/jquery.history.js'
+        '@PpaPaloBundle/Resources/public/js/charisma.js'
+
+
+
+
+        output="filename.js" %}
         <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
 

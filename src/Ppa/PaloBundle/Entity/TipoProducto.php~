@@ -36,6 +36,9 @@ class TipoProducto
      */
     private $descripcion;
 
+    public function __toString() {
+        return $this->nombre;
+    }
 
     /**
      * Get id
@@ -105,7 +108,63 @@ class TipoProducto
 
     /**
      * @ORM\ManyToOne(targetEntity="Categoria", inversedBy="tipoproductos")
-     * @ORM\JoinColumn(name="categoria_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="categoria_id", referencedColumnName="id", nullable=false)
      */
     protected $categoria;
+
+    /**
+     * Add productos
+     *
+     * @param \Ppa\PaloBundle\Entity\Producto $productos
+     * @return TipoProducto
+     */
+    public function addProducto(\Ppa\PaloBundle\Entity\Producto $productos)
+    {
+        $this->productos[] = $productos;
+    
+        return $this;
+    }
+
+    /**
+     * Remove productos
+     *
+     * @param \Ppa\PaloBundle\Entity\Producto $productos
+     */
+    public function removeProducto(\Ppa\PaloBundle\Entity\Producto $productos)
+    {
+        $this->productos->removeElement($productos);
+    }
+
+    /**
+     * Get productos
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getProductos()
+    {
+        return $this->productos;
+    }
+
+    /**
+     * Set categoria
+     *
+     * @param \Ppa\PaloBundle\Entity\Categoria $categoria
+     * @return TipoProducto
+     */
+    public function setCategoria(\Ppa\PaloBundle\Entity\Categoria $categoria = null)
+    {
+        $this->categoria = $categoria;
+    
+        return $this;
+    }
+
+    /**
+     * Get categoria
+     *
+     * @return \Ppa\PaloBundle\Entity\Categoria 
+     */
+    public function getCategoria()
+    {
+        return $this->categoria;
+    }
 }

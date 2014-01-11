@@ -36,6 +36,14 @@ class Producto
      */
     private $precio;
 
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="oferta", type="integer", nullable=true)
+     */
+    private $oferta;
+
     /**
      * @var string
      *
@@ -49,13 +57,6 @@ class Producto
      * @ORM\Column(name="descripcionBreve", type="string", length=80)
      */
     private $descripcionBreve;
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="mostrar", type="boolean")
-     */
-    private $mostrar;
 
     public function __toString() {
         return $this->nombre;
@@ -118,6 +119,30 @@ class Producto
     }
 
     /**
+     * Set oferta
+     *
+     * @param integer $oferta
+     * @return Producto
+     */
+    public function setOferta($oferta)
+    {
+        $this->oferta = $oferta;
+    
+        return $this;
+    }
+
+    /**
+     * Get oferta
+     *
+     * @return integer 
+     */
+    public function getOferta()
+    {
+        return $this->oferta;
+    }
+
+
+    /**
      * Set descripcion
      *
      * @param string $descripcion
@@ -163,29 +188,6 @@ class Producto
         return $this->descripcionBreve;
     }
 
-
-    /**
-     * Set mostrar
-     *
-     * @param boolean $mostrar
-     * @return Producto
-     */
-    public function setMostrar($mostrar)
-    {
-        $this->mostrar = $mostrar;
-    
-        return $this;
-    }
-
-    /**
-     * Get mostrar
-     *
-     * @return boolean 
-     */
-    public function getMostrar()
-    {
-        return $this->mostrar;
-    }
 
     /**
      * @ORM\OneToMany(targetEntity="Imagen", mappedBy="producto")
