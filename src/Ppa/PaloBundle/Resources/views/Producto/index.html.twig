@@ -9,6 +9,7 @@
                 <th>Id</th>
                 <th>Nombre</th>
                 <th>Precio</th>
+                <th>Oferta</th>
                 <th>Descripcion</th>
                 <th>Descripcion Breve</th>
                 <th>Actions</th>
@@ -20,6 +21,7 @@
                 <td><a href="{{ path('producto_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.nombre }}</td>
                 <td>{{ entity.precio }}</td>
+                <td>{{ entity.oferta }}</td>
                 <td>{{ entity.descripcion }}</td>
                 <td>{{ entity.descripcionBreve }}</td>
                 <td>
@@ -36,3 +38,4 @@
             Nuevo Producto
         </a>
     {% endblock %}
+
