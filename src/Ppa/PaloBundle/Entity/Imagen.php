@@ -206,15 +206,10 @@ class Imagen
         // check if we have an old image path
         if (isset($this->path)) {
             // store the old name to delete after the update
-            $this->temp = $this->path;
+            $this->temp = '/var/www/Palopinia/web/img/'.$this->getId().'.'.$this->getPath();
             $this->path = null;
         } else {
-//            $this->path = 'initial';
-            if (null !== $this->getFile()) {
-                // do whatever you want to generate a unique name
-                $filename = $this->getFile()->guessExtension();
-                $this->path = $filename;
-            }
+            $this->path = 'initial';
         }
     }
 

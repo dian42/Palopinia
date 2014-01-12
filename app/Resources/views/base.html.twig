@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link type="image/x-icon" href="'bundles/ppapalo/img/pp.ico" rel="icon" />
-    <link type="image/x-icon" href="pp.ico" rel="shortcut icon" /> 
     <meta charset="utf-8">
     <title> Importadora Palo Piña</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- The styles -->
-    {% stylesheets filter='cssrewrite' '@PpaPaloBundle/Resources/public/css/bootstrap-spacelab.css' %}
-        <link  rel="stylesheet" href="{{ asset_url }}" />
-    {% endstylesheets %}
+    {% if medicina == 'salud' %}
+        {% stylesheets filter='cssrewrite' '@PpaPaloBundle/Resources/public/css/bootstrap-spacelab.css' %}
+            <link  rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endif %}
+    {% if medicina == 'deportes' %}
+        {% stylesheets filter='cssrewrite' '@PpaPaloBundle/Resources/public/css/bootstrap-slate.css' %}
+            <link  rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endif %}
+    {% if medicina == 'tecnologia' %}
+        {% stylesheets filter='cssrewrite' '@PpaPaloBundle/Resources/public/css/bootstrap-cyborg.css' %}
+            <link  rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endif %}
 
     <style type="text/css">
       body {
@@ -80,12 +90,24 @@
             <div class="container-fluid">
                 <!--<span id="textoLogo">Sin Usted Quebramos</span>-->
                 <div id="asdf">
-                <a class="brand" href="{{path('home',{'medicina' : medicina })}}"> 
+                <a class="brand" href="{{path('home',{'medicina' : medicina })}}" style="border-right: none;"> 
                     <img id="logo" style="float left;" src=" {{asset('bundles/ppapalo/img/logooficial.png')}}"></img>
                     <span>Sin ustedes quebramos... </span>
                 </a>
             </div>
               {% if is_granted('ROLE_ADMIN') %}
+                  <div class="btn-group pull-left theme-container" >
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span class="hidden-phone"> Cambiarme de Categoria</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{path('home',{'medicina':'salud'})}}">Salud</a></li>
+                        <li><a href="{{path('home',{'medicina':'tecnologia'})}}"> Tecnología</a></li>
+                        <li><a href="{{path('home',{'medicina':'deportes'})}}">Deporte</a></li>
+
+                    </ul>
+                </div>
                  <a href="botoncrate" style="margin-top: 55px; !important"></a>
                  <div align="right" style="margin-top: 55px;">
                  <a class="btn btn-success" href="{{path('user_logout')}}">
@@ -99,6 +121,9 @@
                     </a>
                  <a class="btn btn-success" href="{{path('imagen_new')}}">
                         Crear Imagen
+                    </a>
+                <a class="btn btn-success" href="{{path('contacto_new')}}">
+                    Crear Contacto
                     </a>
                 </div>
                 {% endif %}               
