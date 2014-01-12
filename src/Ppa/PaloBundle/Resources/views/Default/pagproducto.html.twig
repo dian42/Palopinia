@@ -3,44 +3,26 @@
 
 
 {%block body%}
-	{% for item in entities %}
-		<div class="box span7">
-			<div class="box-header well" data-original-title>
-				<h2><i class="icon-th"></i> {{item.nombre}}</h2>
-			</div>
-<<<<<<< HEAD
-			{{ render(controller('PpaPaloBundle:Default:articulo', {'idProd': item.id } )) }}
-		</div>
-			<div class="box span4">
-			<div class="box-header well" data-original-title>
-				<h2><i class="icon-th"></i> Descripción</h2>
-=======
-			<div class="box-content">
-				<div class="box-content">
-					<a style="text-decoration:none"> 
-						{{ render(controller('PpaPaloBundle:Default:articulo', {'idProd': item.id } )) }}
-<<<<<<< HEAD
+        {% for item in entities %}
+            <div class="box span7">
+                    <div class="box-header well" data-original-title>
+                            <h2><i class="icon-th"></i> {{item.nombre}}</h2>
+                    </div>
+                    {{ render(controller('PpaPaloBundle:Default:articulo', {'idProd': item.id } )) }}
+            </div>
+                    <div class="box span4">
+                    <div class="box-header well" data-original-title>
+                            <h2><i class="icon-th"></i> Descripción</h2>
+                    </div>
+                        <div class="box-content">
+                                <br> <p>{{item.descripcion|nl2br}}</p>
+                                {% if item.oferta == null %}
+                                <h2 style="color:red"><spam style="color:green; font-size: 14px;"><FONT SIZE=3></FONT>$ </spam>{{item.precio}}</h2>
+                                {% else %}
+                                <h2 style="color:red"><spam style="color:green; font-size: 14px;"><FONT SIZE=3></FONT>$ </spam><strike>{{item.precio}}</strike> ahora</br> <spam style="color:green; font-size: 16px;"><FONT SIZE=8>{{item.oferta}}!!!!</spam></h2>
+                                {% endif %}
+                        </div>
+                    </div>
 
-						<span  id="text_card">
-							<p>Precio : {{item.precio}}</p>
-							<p class="clearfix">{{item.descripcion}}</p>	
-						</span>
-=======
->>>>>>> vista
-					</a>
-					<span  id="text_card">
-						<p align="left"><FONT FACE="times new roman" SIZE=4>${{item.precio}}</FONT></p>
-						<p><i><u><b> Descripción</p></i></u></b>
-						<p>{{item.descripcion}}</p>	
-					</span>
-				</div>
->>>>>>> final
-			</div>
-						<div class="box-content">
-							<br> <p>{{item.descripcion|nl2br}}</p>
-							<h2 style="color:red"><spam style="color:green; font-size: 14px;"><FONT SIZE=3></FONT>$  </spam>{{item.precio}}</h2>
-						</div>
-			</div>
-
-	{% endfor %}
+        {% endfor %}
 {% endblock %}

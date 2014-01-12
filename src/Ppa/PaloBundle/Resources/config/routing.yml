@@ -5,19 +5,19 @@ home:
     path:  /{medicina}/
     defaults: { _controller: PpaPaloBundle:Default:index }
     requirements:
-        medicina:  Medicina|Poto
+        medicina:  salud|tecnologia|deportes
 mostrar:
     path:  /{medicina}/mostrar/{idTipo}
     defaults: { _controller: PpaPaloBundle:Default:mostrar }
     requirements:
-        medicina:  Medicina|Poto
+        medicina:  salud|tecnologia|deportes
 contact:
     path:  /{medicina}/contacto
     defaults: { _controller: PpaPaloBundle:Default:contacto }
     requirements:
-        medicina:  Medicina|Poto
+        medicina:  salud|tecnologia|deportes
 pagproducto:
     path:  /{medicina}/articulo/{idProd}
     defaults: { _controller: PpaPaloBundle:Default:pagproducto }
     requirements:
-        medicina:  Medicina|Poto
+        medicina:  salud|tecnologia|deportes
