@@ -5,9 +5,21 @@
     <title> Importadora Palo Piña</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- The styles -->
-    {% stylesheets filter='cssrewrite' '@PpaPaloBundle/Resources/public/css/bootstrap-spacelab.css' %}
-        <link  rel="stylesheet" href="{{ asset_url }}" />
-    {% endstylesheets %}
+    {% if medicina == 'salud' %}
+        {% stylesheets filter='cssrewrite' '@PpaPaloBundle/Resources/public/css/bootstrap-spacelab.css' %}
+            <link  rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endif %}
+    {% if medicina == 'deportes' %}
+        {% stylesheets filter='cssrewrite' '@PpaPaloBundle/Resources/public/css/bootstrap-slate.css' %}
+            <link  rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endif %}
+    {% if medicina == 'tecnologia' %}
+        {% stylesheets filter='cssrewrite' '@PpaPaloBundle/Resources/public/css/bootstrap-cyborg.css' %}
+            <link  rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endif %}
 
     <style type="text/css">
       body {
@@ -79,7 +91,7 @@
                 <!--<span id="textoLogo">Sin Usted Quebramos</span>-->
                 <div id="asdf">
                 <a class="brand" href="{{path('home',{'medicina' : medicina })}}"> 
-                    <img id="logo" style="float left;" src=" {{asset('bundles/ppapalo/img/logooficial.jpg')}}"></img>
+                    <img id="logo" style="float left;" src=" {{asset('bundles/ppapalo/img/logooficial.png')}}"></img>
                     <span>Sin ustedes quebramos... </span>
                 </a>
             </div>
