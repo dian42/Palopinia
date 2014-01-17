@@ -36,19 +36,27 @@ class Producto
      */
     private $precio;
 
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="oferta", type="integer", nullable=true)
+     */
+    private $oferta;
+
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcion", type="string", length=255)
+     * @ORM\Column(name="descripcion", type="string", length=3000)
      */
     private $descripcion;
 
     /**
-     * @var boolean
+     * @var string
      *
-     * @ORM\Column(name="mostrar", type="boolean")
+     * @ORM\Column(name="descripcionBreve", type="string", length=80)
      */
-    private $mostrar;
+    private $descripcionBreve;
 
     public function __toString() {
         return $this->nombre;
@@ -111,6 +119,30 @@ class Producto
     }
 
     /**
+     * Set oferta
+     *
+     * @param integer $oferta
+     * @return Producto
+     */
+    public function setOferta($oferta)
+    {
+        $this->oferta = $oferta;
+    
+        return $this;
+    }
+
+    /**
+     * Get oferta
+     *
+     * @return integer 
+     */
+    public function getOferta()
+    {
+        return $this->oferta;
+    }
+
+
+    /**
      * Set descripcion
      *
      * @param string $descripcion
@@ -134,27 +166,28 @@ class Producto
     }
 
     /**
-     * Set mostrar
+     * Set descripcionBreve
      *
-     * @param boolean $mostrar
+     * @param string $descripcion
      * @return Producto
      */
-    public function setMostrar($mostrar)
+    public function setDescripcionBreve($descripcionBreve)
     {
-        $this->mostrar = $mostrar;
+        $this->descripcionBreve = $descripcionBreve;
     
         return $this;
     }
 
     /**
-     * Get mostrar
+     * Get descripcionBreve
      *
-     * @return boolean 
+     * @return string 
      */
-    public function getMostrar()
+    public function getDescripcionBreve()
     {
-        return $this->mostrar;
+        return $this->descripcionBreve;
     }
+
 
     /**
      * @ORM\OneToMany(targetEntity="Imagen", mappedBy="producto")
@@ -168,7 +201,7 @@ class Producto
 
     /**
      * @ORM\ManyToOne(targetEntity="TipoProducto", inversedBy="productos")
-     * @ORM\JoinColumn(name="tipoproducto_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="tipoproducto_id", referencedColumnName="id", nullable=false)
      */
     protected $tipoproducto;
 

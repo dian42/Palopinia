@@ -1,0 +1,30 @@
+contacto:
+    pattern:  /
+    defaults: { _controller: "PpaPaloBundle:Contacto:index" }
+
+contacto_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PpaPaloBundle:Contacto:show" }
+
+contacto_new:
+    pattern:  /new
+    defaults: { _controller: "PpaPaloBundle:Contacto:new" }
+
+contacto_create:
+    pattern:  /create
+    defaults: { _controller: "PpaPaloBundle:Contacto:create" }
+    requirements: { _method: post }
+
+contacto_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "PpaPaloBundle:Contacto:edit" }
+
+contacto_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PpaPaloBundle:Contacto:update" }
+    requirements: { _method: post|put }
+
+contacto_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PpaPaloBundle:Contacto:delete" }
+    requirements: { _method: post|delete }

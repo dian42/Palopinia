@@ -1,3 +1,23 @@
-ppa_palo_homepage:
-    pattern:  /hello/{name}
+init:
+    path:  /
+    defaults: { _controller: PpaPaloBundle:Default:init }
+home:
+    path:  /{medicina}/
     defaults: { _controller: PpaPaloBundle:Default:index }
+    requirements:
+        medicina:  salud|tecnologia|deportes
+mostrar:
+    path:  /{medicina}/mostrar/{idTipo}
+    defaults: { _controller: PpaPaloBundle:Default:mostrar }
+    requirements:
+        medicina:  salud|tecnologia|deportes
+contact:
+    path:  /{medicina}/contacto
+    defaults: { _controller: PpaPaloBundle:Default:contacto }
+    requirements:
+        medicina:  salud|tecnologia|deportes
+pagproducto:
+    path:  /{medicina}/articulo/{idProd}
+    defaults: { _controller: PpaPaloBundle:Default:pagproducto }
+    requirements:
+        medicina:  salud|tecnologia|deportes

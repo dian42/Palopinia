@@ -15,9 +15,11 @@ class ImagenType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre')
-            ->add('descripcion')
-            ->add('producto')
+            ->add('nombre', null , array ( 'label' => 'Título' ) )
+            ->add('posicion', 'checkbox', array( 'label' => 'Elija si sera la imagen por defecto', 'required'  => false, 'value' => 0,))
+            ->add('descripcion','textarea', array ( 'label' => 'Descripción' ) )
+            ->add('producto', null , array ( 'label' => 'Producto' ) )
+            ->add('file')
         ;
     }
     
@@ -36,6 +38,6 @@ class ImagenType extends AbstractType
      */
     public function getName()
     {
-        return 'ppa_palobundle_imagen';
+        return 'ppa_palobundle_imagentype';
     }
 }

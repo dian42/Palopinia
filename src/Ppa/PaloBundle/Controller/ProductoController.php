@@ -4,6 +4,9 @@ namespace Ppa\PaloBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 use Ppa\PaloBundle\Entity\Producto;
 use Ppa\PaloBundle\Form\ProductoType;
@@ -15,10 +18,6 @@ use Ppa\PaloBundle\Form\ProductoType;
 class ProductoController extends Controller
 {
 
-    /**
-     * Lists all Producto entities.
-     *
-     */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -29,10 +28,7 @@ class ProductoController extends Controller
             'entities' => $entities,
         ));
     }
-    /**
-     * Creates a new Producto entity.
-     *
-     */
+    
     public function createAction(Request $request)
     {
         $entity = new Producto();
@@ -67,7 +63,7 @@ class ProductoController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Crear', 'attr' => array('class' => 'btn btn-success')));
 
         return $form;
     }
@@ -146,7 +142,7 @@ class ProductoController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Cambiar', 'attr' => array('class' => 'btn btn-info')));
 
         return $form;
     }
@@ -216,7 +212,7 @@ class ProductoController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('producto_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Borrar', 'attr' => array('class' => 'btn btn-danger')))
             ->getForm()
         ;
     }
