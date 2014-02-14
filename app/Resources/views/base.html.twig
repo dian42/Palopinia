@@ -229,6 +229,12 @@
         '@PpaPaloBundle/Resources/public/js/bootstrap-button.js'
         '@PpaPaloBundle/Resources/public/js/bootstrap-collapse.js'
         '@PpaPaloBundle/Resources/public/js/bootstrap-carousel.js'
+
+        output="filename.js" %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    {% javascripts
         '@PpaPaloBundle/Resources/public/js/bootstrap-typeahead.js'
         '@PpaPaloBundle/Resources/public/js/bootstrap-tour.js'
         '@PpaPaloBundle/Resources/public/js/jquery.cookie.js'
@@ -255,7 +261,7 @@
 
 
 
-        output="filename.js" %}
+        output="filename6.js" %}
         <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
 

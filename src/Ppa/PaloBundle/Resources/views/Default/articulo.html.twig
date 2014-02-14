@@ -3,29 +3,30 @@
 {% for item2 in entitie %}
 	{% set counter = counter + 1 %}
 {% endfor %}
+		
+		<div id="myCarousel" class="carousel slide" height="250px">
 
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" height="250px">
-		  <!-- Indicators -->
-		  <ol class="carousel-indicators">
-		    <!--<li data-target="#carousel-example-generic" data-slide-to="" class="active"></li>-->
+			<!-- Indicators -->
+				<!--<ol class="carousel-indicators">-->
+				<!--<li data-target="#carousel-example-generic" data-slide-to="" class="active"></li>-->
 			{% set counter = counter - 2 %}
 			{% for i in 1..counter %}
-		    <!--<li data-target="#carousel-example-generic" data-slide-to="{{ i }}"></li>-->
+				<!--<li data-target="#carousel-example-generic" data-slide-to="{{ i }}"></li>-->
 			{% endfor %}
 
-		  </ol>
-		  {% set bd = 0 %}
+			<!--</ol>-->
+			{% set bd = 0 %}
 		<!-- Wrapper for slides -->
 			<div class="carousel-inner">
 				{% for item2 in entitie %}
-					{% if item2.posicion == 1 %}
-							<div class="item active">
-								<img src=" {{asset('img/')}}{{item2.id}}.{{item2.path}}" width="640" height="480">
-							</div>
-						    {% set bd = 1 %}
+					{% if bd == 0 %}
+						{% if item2.posicion == 1 %}
+								<div class="item active">
+									<img src=" {{asset('img/')}}{{item2.id}}.{{item2.path}}" width="640" height="480">
+								</div>
+							    {% set bd = 1 %}
+						{% endif %}
 					{% endif %}
-				{% endfor %}
-				{% for item2 in entitie %}
 					{% if bd == 0 %}
 						<div class="item active">
 							<img src=" {{asset('img/')}}{{item2.id}}.{{item2.path}}" width="640" height="480">
@@ -39,11 +40,7 @@
 				{% endfor %}
 
 			</div>
-				  <!-- Controls -->
-				  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-				    <span class="glyphicon glyphicon-chevron-left"></span>
-				  </a>
-				  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-				    <span class="glyphicon glyphicon-chevron-right"></span>
-				  </a>
+				  <!-- Controls --> <!-- Carousel nav -->
+<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 		</div>
