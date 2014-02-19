@@ -74,9 +74,61 @@
 
                     </ul>
                 </div>
+                 <a href="botoncrate" style="margin-top: 55px; !important"></a>
+                 <div align="right" style="margin-top: 55px;">
+                    <a class="btn btn-success" href="{{path('user_logout')}}">
+                        <span>Logout</span>
+                    </a>
 
-                 <a href="botoncrate"></a>
-                 <div align="right" >
+
+                     <div class="btn-group pull-right theme-container" >
+                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="hidden-phone"> Opciones Contacto</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{path('contacto_new')}}">Crear Contacto</a></li>
+                            <li><a href="{{path('contacto')}}">Ver Contactos</a></li>
+                        </ul>
+                    </div>
+
+
+                     <div class="btn-group pull-right theme-container" >
+                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="hidden-phone"> Opciones Imagen </span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{path('imagen_new')}}">Crear Imagen</a></li>
+                            <li><a href="{{path('imagen')}}">Ver Imagenes</a></li>
+                        </ul>
+                    </div>
+
+                     <div class="btn-group pull-right theme-container" >
+                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="hidden-phone"> Opciones Producto</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{path('producto_new')}}">Crear Producto</a></li>
+                            <li><a href="{{path('producto')}}">Ver Productos</a></li>
+                        </ul>
+                    </div>
+
+
+                     <div class="btn-group pull-right theme-container" >
+                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="hidden-phone"> Opciones Tipo Producto</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{path('tipoproducto_new')}}">Crear Tipo Producto</a></li>
+                            <li><a href="{{path('tipoproducto')}}">Ver Tipo Productos</a></li>
+                        </ul>
+                    </div>
+                </div>
+                 <!--
+                 <div align="right" style="margin-top: 55px;">
                  <a class="btn btn-success" href="{{path('user_logout')}}">
                     <span>Logout</span>
                     </a>
@@ -86,13 +138,14 @@
                  <a class="btn btn-success" href="{{path('tipoproducto_new')}}">
                         Crear Tipo Producto
                     </a>
-                <a class="btn btn-success" href="{{path('imagen_new')}}">
-                    Crear Imagen
+                 <a class="btn btn-success" href="{{path('imagen_new')}}">
+                        Crear Imagen
                     </a>
                 <a class="btn btn-success" href="{{path('contacto_new')}}">
                     Crear Contacto
                     </a>
                 </div>
+                -->
                 {% endif %}               
 
 
