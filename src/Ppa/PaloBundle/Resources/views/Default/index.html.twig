@@ -2,10 +2,7 @@
 
 {%block body%}
 	
-    <div id="content" class="span10">
-    <h1>Productos</h1>
-    
-		<div class="row-fluid sortable ui-sortable">
+		<div class="row-fluid sortable">
           {% set counter = 1 %} 
 				{% for item in entitie %}
 					<div class="box span4">
@@ -16,13 +13,13 @@
 
 						<!-- asdads dasd  -->
 								<div id="info" class="tab-pane active"  align="center" >
-									<?--<a href="{{ path('pagproducto', {'idProd': item.id , 'medicina' : medicina})}}">
+									<a href="{{ path('pagproducto', {'idProd': item.id , 'medicina' : medicina})}}">
 										{{ render(controller('PpaPaloBundle:Default:picture', {'idProd': item.id , 'medicina' : medicina})) }}
 									</a>
 											 {% if item.oferta == null %}
 													<FONT FACE="times new roman" SIZE=3.5 color=0BA457>${{item.precio}}</FONT>
 											   {% else %}
-                                						<h3 style="color:red">Oferta <spam style="color:green; font-size: 14px;"><FONT SIZE=4></FONT>$ </spam><spam style="color:green; font-size: 16px;"><FONT SIZE=4>{{item.oferta}}</spam></h2>
+                                						<h3 style="color:red">Oferta <spam style="color:green; font-size: 14px;"><FONT SIZE=4></FONT>$ </spam><spam style="color:green; font-size: 16px;"><FONT SIZE=4></FONT>{{item.oferta}}</spam></h3>
                                 				{% endif %}
 
 											<p>{{item.descripcionBreve}}</p>
@@ -34,11 +31,10 @@
 					</div>
 					{% if counter  is divisibleby(3) %}
 						</div>
-						<div class="row-fluid sortable ui-sortable">
+						<div class="row-fluid sortable">
 					{% endif %}
 					{% set counter = counter + 1 %}
 				{% endfor %}
 			</div>
-		</div>
                 
 {% endblock %}

@@ -60,7 +60,7 @@ class Contacto
     /**
      * @var string
      *
-     * @ORM\Column(name="telefono2", type="string", length=12)
+     * @ORM\Column(name="telefono2", type="string", length=12, nullable=true)
      */
     private $telefono2;
 

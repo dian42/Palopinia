@@ -9,6 +9,7 @@
                 <th>Id</th>
                 <th>Nombre</th>
                 <th>Descripcion</th>
+                <th>Posicion</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -18,7 +19,7 @@
                 <td><a href="{{ path('imagen_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.nombre }}</td>
                 <td>{{ entity.descripcion }}</td>
-                <td>
+                <td>{{ entity.posicion }}</td>                <td>
                     <a class="btn btn-success" href="{{ path('imagen_show', { 'id': entity.id }) }}">Ver</a>
                     <a class="btn btn-info" href="{{ path('imagen_edit', { 'id': entity.id }) }}">Editar</a>
                 </td>
