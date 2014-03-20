@@ -20,15 +20,10 @@
                                 {% if item.oferta == null %}
                                 <h2 style="color:green">${{item.precio|number_format}}</h2>
                                 {% else %}
-                                <h2 > Precio Normal:<br><spam style="color:green">$</spam><strike style="color:red">{{item.precio|number_format}}</strike> <br>Precio Oferta:<br><spam style="font-style:italic;"></spam><spam style="color:green; font-size: 16px;"><FONT SIZE=8>${{item.oferta|number_format}}!!!!</FONT></spam></h2>
+                                <h2 > Precio Normal:<br><spam style="color:green">$</spam><strike style="color:red">{{item.precio|number_format}}</strike> <br>Precio Oferta:<br><spam style="font-style:italic;"></spam><spam style="color:green; font-size: 16px;"><FONT SIZE=6>${{item.oferta|number_format}}!!!!</FONT></spam></h2>
                                 {% endif %}
                         </div>
         </div>
-
-
- 
-
-
 
         <div class="box span4">
                     <div class="box-header well" data-original-title>
