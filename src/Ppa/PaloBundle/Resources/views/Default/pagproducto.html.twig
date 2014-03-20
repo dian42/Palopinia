@@ -9,20 +9,36 @@
                             <h2><i class="icon-th"></i> {{item.nombre}}</h2>
                     </div>
                     {{ render(controller('PpaPaloBundle:Default:articulo', {'idProd': item.id } )) }}
+
             </div>
-                    <div class="box span4">
+            
+        <div class="box span4" >
+                    <div class="box-header well" data-original-title>
+                            <h2><i class="icon-th"></i> Precio</h2>
+                    </div>
+                        <div class="box-content">
+                                {% if item.oferta == null %}
+                                <h2 style="color:green">${{item.precio|number_format}}</h2>
+                                {% else %}
+                                <h2 > Precio Normal:<br><spam style="color:green">$</spam><strike style="color:red">{{item.precio|number_format}}</strike> <br>Precio Oferta:<br><spam style="font-style:italic;"></spam><spam style="color:green; font-size: 16px;"><FONT SIZE=8>${{item.oferta|number_format}}!!!!</FONT></spam></h2>
+                                {% endif %}
+                        </div>
+        </div>
+
+
+ 
+
+
+
+        <div class="box span4">
                     <div class="box-header well" data-original-title>
                             <h2><i class="icon-th"></i> Descripción</h2>
                     </div>
                         <div class="box-content">
                                 <br> <p>{{item.descripcion|nl2br}}</p>
-                                {% if item.oferta == null %}
-                                <h2 style="color:red"><spam style="color:green; font-size: 14px;"><FONT SIZE=3></FONT>$ </spam>{{item.precio}}</h2>
-                                {% else %}
-                                <h2 style="color:red"><spam style="color:green; font-size: 14px;"><FONT SIZE=3></FONT>$ </spam><strike>{{item.precio}}</strike> ahora</br> <spam style="color:green; font-size: 16px;"><FONT SIZE=8>{{item.oferta}}!!!!</spam></h2>
-                                {% endif %}
+
                         </div>
-                    </div>
+        </div>
 
         {% endfor %}
 {% endblock %}

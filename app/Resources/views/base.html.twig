@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title> Importadora Palo Piña</title>
+    <link rel="apple-touch-icon" href="{{ asset('bundles/ppapalo/img/logofav.png') }}">
+    <link rel="icon" href="{{ asset('bundles/ppapalo/img/logofav.png') }}"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- The styles -->
     {% if medicina == 'salud' %}
@@ -92,7 +94,7 @@
                 <div id="asdf">
                 <a class="brand" href="{{path('init')}}" style="border-right: none;"> 
                     <img id="logo" style="float left;" src=" {{asset('bundles/ppapalo/img/logooficial.png')}}"></img>
-                    <span>Sin ustedes quebramos... </span>
+                    <span>Sin Usted Quebramos</span>
                 </a>
             </div>
               {% if is_granted('ROLE_ADMIN') %}
